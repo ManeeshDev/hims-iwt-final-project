@@ -1,0 +1,271 @@
+/* ==== Keyframes For Animations === */
+@-webkit-keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(20px);
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(20px);
+    }
+}
+
+@-webkit-keyframes glowShadow {
+    to {
+        box-shadow: 0px 0px 9px 4px var(--primary);
+    }
+}
+
+@keyframes glowShadow {
+    to {
+        box-shadow: 0px 0px 9px 4px var(--primary);
+    }
+}
+
+@-webkit-keyframes glowImage {
+    to {
+        -webkit-filter: brightness(1.5);
+        filter: brightness(1.5);
+    }
+}
+
+@keyframes glowImage {
+    to {
+        -webkit-filter: brightness(1.5);
+        filter: brightness(1.5);
+    }
+}
+
+@-webkit-keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%) translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-10%) translateY(20px);
+    }
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%) translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-10%) translateY(20px);
+    }
+}
+
+.fadeInUp-2s {
+    /* moveUp come from  @Keyframes */
+    -webkit-animation: fadeUp 2.0s ease-in-out forwards;
+    animation: fadeUp 2.0s ease-in-out forwards;
+}
+
+.fadeInUp-3s {
+    /* moveUp come from  @Keyframes */
+    -webkit-animation: fadeUp 3.0s ease-in-out forwards;
+    animation: fadeUp 3.0s ease-in-out forwards;
+}
+
+.fadeInUp-4s {
+    /* moveUp come from  @Keyframes */
+    -webkit-animation: fadeUp 4.0s ease-in-out forwards;
+    animation: fadeUp 4.0s ease-in-out forwards;
+}
+
+/* ==== Containers === */
+.container,
+.nav-container .container-expand {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+
+    .nav-container {
+        width: 915px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+
+    .nav-container {
+        width: 1135px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+
+    .nav-container {
+        width: 1335px;
+    }
+}
+
+/* ==== Display - Align classes === */
+.d-none {
+    display: none !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+/* ==== Spacing === */
+.m-0 {
+    margin: 0 !important;
+}
+
+.mx-0,
+.ml-0 {
+    margin-left: 0 !important;
+}
+
+.mx-0,
+.mr-0 {
+    margin-right: 0 !important;
+}
+
+.mb-25 {
+    margin-bottom: 25px !important;
+}
+
+.mb-30 {
+    margin-bottom: 30px !important;
+}
+
+.mb-50 {
+    margin-bottom: 50px !important;
+}
+
+.mr-3,
+.mx-3 {
+    margin-right: 1rem !important;
+}
+
+.ml-3,
+.mx-3 {
+    margin-left: 1rem !important;
+}
+
+.mx-5,
+.ml-5 {
+    margin-left: 3rem !important;
+}
+
+.mx-5,
+.mr-5 {
+    margin-right: 3rem !important;
+}
+
+.py-5,
+.pt-5 {
+    padding-top: 3rem !important;
+}
+
+.py-5,
+.pb-5 {
+    padding-bottom: 3rem !important;
+}
+
+.pr-0,
+.px-0 {
+    padding-right: 0 !important;
+}
+
+.pl-0,
+.px-0 {
+    padding-left: 0 !important;
+}
+
+/* ==== Grid System === */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-4 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+}
+
+@media (min-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+/* ==== Text classes === */
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+/* ==== Shadow class === */
+.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.shadow-none {
+    box-shadow: none !important;
+}

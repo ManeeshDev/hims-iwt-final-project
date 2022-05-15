@@ -1,0 +1,57 @@
+/* ==== Banner Area Style === */
+.main-banner-area {
+    position: relative;
+    background-color: var(--main-banner-bg);
+    padding-top: 85px;
+    padding-bottom: 125px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.main-banner-area .banner-text {
+    max-width: 540px;
+    margin-left: auto;
+}
+
+.main-banner-area .banner-text {
+    position: relative;
+}
+
+.main-banner-area .banner-text span {
+    font-size: 16px;
+    color: var(--primary-1);
+    margin-bottom: 20px;
+    display: block;
+    font-weight: 600;
+}
+
+.main-banner-area .banner-text h1 {
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+.main-banner-area .banner-text p {
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+.main-banner-area .shape {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    z-index: -1;
+}
+
+.main-banner-area .banner-shape-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -3;
+}
+
+.main-banner-area .banner-img {
+    width: 85%;
+    margin: 0 0 0 55px;
+}
