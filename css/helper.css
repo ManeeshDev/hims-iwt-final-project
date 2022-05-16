@@ -240,38 +240,6 @@
     padding-left: 0 !important;
 }
 
-/* ==== Grid System === */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
-
-.col {
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.col-4 {
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
-}
-
-@media (min-width: 768px) {
-    .col-md-6 {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-}
-
-.col-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-}
-
 /* ==== Text classes === */
 .text-center {
     text-align: center !important;

@@ -1,15 +1,27 @@
+/* ==== Grid System === */
 * {
    box-sizing: border-box;
+}
+.row {
+   display: flex;
+   flex-wrap: wrap;
+   margin-right: -15px;
+   margin-left: -15px;
 }
 .row::after {
    content: "";
    clear: both;
    display: table;
 }
-
 [class*="col-"] {
    float: left;
    padding: 15px;
+}
+.col {
+   position: relative;
+   width: 100%;
+   padding-right: 15px;
+   padding-left: 15px;
 }
 .col-1 {
    width: 8.33%;
@@ -21,10 +33,24 @@
    width: 25%;
 }
 .col-4 {
+   flex: 0 0 33.33333%;
+   max-width: 33.33333%;
+}
+.col-4 {
    width: 33.33%;
 }
 .col-5 {
    width: 41.66%;
+}
+@media (min-width: 768px) {
+   .col-md-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+   }
+}
+.col-6 {
+   flex: 0 0 50%;
+   max-width: 50%;
 }
 .col-6 {
    width: 50%;
