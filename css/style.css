@@ -24,6 +24,7 @@
   --pure: #fff;
   --smoke: whitesmoke;
   --dark-gray: #999;
+  --nav-bar-bg: rgba(255, 255, 255, 0.89);
   --main-banner-bg: #a0e1c6;
   --footer-bg: #26292d;
   --footer-text: #a7a7a7;
@@ -137,7 +138,7 @@ h6,
 }
 
 .pre-loader-gif {
-  background: url('../images/infinity-1s-200px.gif') no-repeat center center;
+  background: url('../images/page-pre-loader.gif') no-repeat center center;
   height: 100%;
   width: 100%;
   z-index: 9999999;

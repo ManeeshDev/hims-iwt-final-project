@@ -1,7 +1,8 @@
-<footer class="footer-section shadow">
+
+<footer class="footer-section footer-bg">
     <!-- =========== Start Footer Area =============================== -->
     <section id="footer">
-        <div class="footer-bg">
+        <div class="footer-sec">
             <div class="container">
                 <div class="footer-border-btm pt-5">
                     <div class="row">
@@ -42,7 +43,7 @@
                             </div>
                             <div class="footer-text">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio at eius dolores rem eum atque,
-                                   tempora consectetur ex eveniet eos similique provident magnam dolor, numquam aspernatur? Iure.</p>
+                                    tempora consectetur ex eveniet eos similique provident magnam dolor, numquam aspernatur? Iure.</p>
                             </div>
                             <div class="footer-social-icon">
                                 <span>Follow us</span>

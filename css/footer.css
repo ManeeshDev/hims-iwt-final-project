@@ -1,22 +1,34 @@
 ul {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     list-style-type: none;
 }
 
+footer {
+    display: block
+}
+
 .footer-section {
-    background: var(--footer-bg);
+    /* background: var(--footer-bg); */
     position: relative;
     margin-top: 5px;
 }
 
 .footer-bg {
-    background-image: url("../images/grid-wave.svg");
-    width: 100%;
-    height: 100%;
-    background-position: center;
+    height: 600px !important;
     background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: top;
     background-size: cover;
+    background-image: url("../images/footer-grid-wave.gif");
+    position: relative;
+    top: 0;
+    z-index: 4;
+}
+
+.footer-sec {
+    position: relative;
+    top: 50px;
 }
 
 .footer-border-btm {

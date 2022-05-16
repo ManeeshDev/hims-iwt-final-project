@@ -30,6 +30,18 @@
             </li>
             <li><a href="#">Q&A</a></li>
             <li><a href="#">Contact</a></li>
+            <li>
+                <div class="search">
+                    <div class="search-btn-box">
+                        <a href="#" class="search-btn">
+                            <img src="./images/icons/search.svg" class="icon-search" alt="search-icon" />
+                        </a>
+                    </div>
+                    <div class="search-input-box">
+                        <input type="text" class="search-input" placeholder="Search here...">
+                    </div>
+                </div>
+            </li>
             <div class="d-flex" id="regAndLogin">
                 <li>
                     <button class="btn login-btn">Log in</button>
