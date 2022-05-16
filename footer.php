@@ -6,14 +6,14 @@
                 <div class="footer-border-btm pt-5">
                     <div class="row">
                         <div class="col col-4 mb-30 justify-center">
-                            <img alt="location-icon" class="icon-svg location-icon" src="./images/icons/location.svg" />
+                            <img src="./images/icons/location.svg" class="icon-svg location-icon" alt="location-icon" />
                             <div class="ft-top-text">
                                 <h4>Find us</h4>
                                 <span>1010 Avenue, sw 54321, chandigarh</span>
                             </div>
                         </div>
                         <div class="col col-4 mb-30 justify-center">
-                            <img alt="phone-icon" class="icon-svg phone-icon" src="./images/icons/phone.svg" />
+                            <img src="./images/icons/phone.svg" class="icon-svg phone-icon" alt="phone-icon" />
                             <div class="ft-top-text">
                                 <h4>Call us</h4>
                                 <a href="tel:+0000000000">
@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="col col-4 mb-30 justify-center">
-                            <img alt="email-icon" class="icon-svg email-icon" src="./images/icons/email.svg" />
+                            <img src="./images/icons/email.svg" class="icon-svg email-icon" alt="email-icon" />
                             <div class="ft-top-text">
                                 <h4>Mail us</h4>
                                 <a href="mailto:somemail@info.com">
@@ -36,8 +36,8 @@
                     <div class="row">
                         <div class="col col-4 mb-25 footer-widget">
                             <div class="footer-logo">
-                                <a href="index-first.html">
-                                    <img alt="brand_img" src="./images/brand-logo.svg" />
+                                <a href="index.php">
+                                    <img src="./images/brand-logo.svg" alt="brand_img" />
                                 </a>
                             </div>
                             <div class="footer-text">
@@ -47,13 +47,13 @@
                             <div class="footer-social-icon">
                                 <span>Follow us</span>
                                 <a href="#">
-                                    <img alt="facebook-icon" class="icon-social" src="./images/icons/facebook.svg" />
+                                    <img src="./images/icons/facebook.svg" class="icon-social" alt="facebook-icon" />
                                 </a>
                                 <a href="#">
-                                    <img alt="twitter-icon" class="icon-social" src="./images/icons/twitter.svg" />
+                                    <img src="./images/icons/twitter.svg" class="icon-social" alt="twitter-icon" />
                                 </a>
                                 <a href="#">
-                                    <img alt="instagram-icon" class="icon-social" src="./images/icons/instagram.svg" />
+                                    <img src="./images/icons/instagram.svg" class="icon-social" alt="instagram-icon" />
                                 </a>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                                 <form action="#" method="POST">
                                     <input placeholder="Email Address" type="text">
                                     <a href="#">
-                                        <img alt="telegramPlane-icon" src="./images/icons/telegram-plane.svg" />
+                                        <img src="./images/icons/telegram-plane.svg" alt="telegramPlane-icon" />
                                     </a>
                                 </form>
                             </div>

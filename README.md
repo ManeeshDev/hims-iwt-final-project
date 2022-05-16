@@ -10,7 +10,7 @@ _hims-iwt-final-project_
  3. Make a new Database (`db-name`) in your MySQL-DBMS (`phpMyAdmin`).
  4. Import tables by `db-name.sql` from `project/database` directory.
  
-
+##### ::
     > git clone git@example.org/user/repository-name-directory.git
     > add project your local server : XAMMP Or WAMMP , etc.
         >> ex: C:\xampp\htdocs
@@ -19,7 +19,7 @@ _hims-iwt-final-project_
     > make new database by project db-name.
         >> http://localhost/phpmyadmin/
     > import db-name.sql file to your created database.
-        >> http://localhost/phpmyadmin/index.php?route=/server/import&lang=en
+        >> http://localhost/phpmyadmin/index.php?route=/server/import&lang=en 
 
 ##### Run App::
     > go on your browser - type localhost/project-name

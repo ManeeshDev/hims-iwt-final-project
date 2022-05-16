@@ -2,8 +2,8 @@
     <!-- =========== Start Nav bar Area =============================== -->
     <div class="nav-container container nav-wrapper" id="navbar">
         <div class="brand">
-            <a href="index-first.html">
-                <img alt="brand_img" class="brand-img" src="./images/brand-logo.svg" />
+            <a href="index.php">
+                <img src="./images/brand-logo.svg" class="brand-img" alt="brand_img" />
             </a>
         </div>
         <div class="menu-bars">
@@ -40,12 +40,12 @@
             </div>
             <li class="avatar-li">
                 <div class="avatar-img-div">
-                    <img alt="profile_img" class="avatar-img" src="./images/3.png" />
+                    <img src="./images/3.png" class="avatar-img" alt="profile_img" />
                 </div>
 
                 <div class="avatar-menu">
                     <div class="avatar-menu-left">
-                        <img alt="profile_img" class="avatar-img-big" src="./images/3.png" />
+                        <img src="./images/3.png" class="avatar-img-big" alt="profile_img" />
                         <button class="btn logout-btn">Logout</button>
                     </div>
                     <div class="avatar-menu-right">

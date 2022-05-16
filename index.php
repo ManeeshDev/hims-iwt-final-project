@@ -52,16 +52,16 @@
 
                         <div class="col-6 pr-0">
                             <div class="banner-img fadeInUp-2s">
-                                <img alt="Image" src="./images/home-page-bg.svg">
+                                <img src="./images/home-page-bg.svg"alt="Image" />
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="shape">
-                    <img alt="Image" src="./images/banner-shape.png">
+                    <img src="./images/banner-shape.png" alt="Image" />
                 </div>
                 <div class="banner-shape-right">
-                    <img alt="Image" src="./images/banner-shape-right.png">
+                    <img src="./images/banner-shape-right.png" alt="Image" />
                 </div>
             </div>
         </section>
