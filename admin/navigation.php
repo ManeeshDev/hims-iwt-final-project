@@ -1,10 +1,14 @@
 <div id="wrapper">
     <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.php">Aegon Life</a>
+            <a class="navbar-brand" href="../">
+                <img alt="brand_img" class="navbar-brand-img" src="../images/brand-logo.svg">
+            </a>
         </div>
         <div class="header-right">
-            <a href="<?php echo "logout.php" ?>" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>
+            <a href="<?php echo "logout.php" ?>" class="btn secondary-btn" title="Logout">
+                <i class="fa fa-power-off"></i>
+            </a>
         </div>
     </nav>
     <!-- /. NAV TOP  -->
@@ -15,10 +19,12 @@
                     <div class="user-img-div">
                         <img src="images/user.png" class="img-thumbnail" />
                         <div class="inner-text">
-                            Admin
-                            <br />
+                            Welcome <br /> Admin
                         </div>
                     </div>
+                </li>
+                <li>
+                    <a href="./"><i class="fa fa-users "></i>DASHBOARD</a>
                 </li>
                 <li>
                     <a href="client.php"><i class="fa fa-users "></i>CLIENTS</a>
