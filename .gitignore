@@ -1,0 +1,19 @@
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+
+.idea/.gitignore
+.idea/misc.xml
+.idea/modules.xml
+.idea/movie-management-system.iml
+.idea/vcs.xml
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*

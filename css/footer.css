@@ -1,0 +1,211 @@
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.footer-section {
+    background: var(--footer-bg);
+    position: relative;
+    margin-top: 5px;
+}
+
+.footer-bg {
+    background-image: url("../images/grid-wave.svg");
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.footer-border-btm {
+    border-bottom: 1px solid #373636;
+}
+
+.ft-top-text {
+    padding-left: 15px;
+    display: inline-block;
+}
+
+.ft-top-text h4 {
+    color: var(--light);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.ft-top-text span {
+    color: var(--footer-text);
+    font-size: 15px;
+}
+
+.ft-top-text a {
+    text-decoration: none;
+}
+
+.ft-top-text a:hover span {
+    color: var(--primary);
+}
+
+.icon-svg {
+    width: 35px;
+    position: absolute;
+    margin-right: 16px;
+}
+
+.location-icon {
+    bottom: 6px;
+    left: 42px;
+}
+
+.phone-icon {
+    bottom: 6px;
+    left: 100px;
+}
+
+.email-icon {
+    bottom: 6px;
+    left: 90px;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+}
+
+.footer-widget ul li {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    margin-bottom: 12px;
+}
+
+.footer-widget ul li a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.footer-widget ul li a {
+    color: var(--footer-text);
+    text-transform: capitalize;
+}
+
+.footer-logo {
+    margin-bottom: 30px;
+}
+
+.footer-logo img {
+    max-width: 200px;
+    height: auto;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-text p {
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: var(--footer-text);
+    line-height: 28px;
+}
+
+.icon-social {
+    width: 35px;
+}
+
+.footer-social-icon span {
+    color: var(--light);
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.footer-social-icon a {
+    color: transparent;
+    margin-right: 15px;
+}
+
+.footer-widget-heading h3 {
+    color: var(--light);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.footer-widget-heading h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    height: 2px;
+    width: 60px;
+    background: var(--primary);
+}
+
+.subscribe-form {
+    position: relative;
+    overflow: hidden;
+}
+
+.subscribe-form input {
+    width: 100%;
+    padding: 14px 28px;
+    background: var(--dark-gray);
+    border: 1px solid var(--dark-gray);
+    color: var(--light);
+}
+
+.subscribe-form input:focus-visible {
+    outline: none;
+}
+
+.subscribe-form a {
+    position: absolute;
+    right: 0;
+    background: var(--secondary);
+    padding: 10px 14px;
+    top: 0;
+}
+
+.subscribe-form a img {
+    transform: rotate(-6deg);
+    width: 25px;
+}
+
+.subscribe-form a:hover {
+    background: var(--dark);
+    transition: all 0.9s ease-in-out;
+}
+
+.subscribe-form a:hover img {
+    transform: rotate(30deg);
+    transition: all 0.9s ease-in-out;
+}
+
+.copyright-area {
+    background: #202020;
+    padding: 25px 0;
+}
+
+.copyright-area p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--footer-text);
+}
+
+.footer-nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.footer-nav li a {
+    font-size: 14px;
+    color: var(--footer-text);
+}
+
+.footer-nav li:hover a {
+    color: var(--primary);
+}
