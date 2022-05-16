@@ -1,0 +1,145 @@
+* {
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+a {
+   color: #428bca;
+   text-decoration: none;
+}
+a {
+   background: transparent;
+}
+body {
+   font-family: "Open Sans", sans-serif;
+   margin: 0;
+}
+
+/* ============================================================
+            Navigation css Add Here
+============================================================ */
+
+.navbar {
+   position: relative;
+   min-height: 50px;
+}
+
+.navbar-cls-top {
+   background-color: #a0e1c6;
+}
+.navbar-header {
+   background-color: #bf003f;
+   float: left;
+   width: 260px;
+   height: 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.navbar-header .navbar-brand {
+   color: #fff;
+   width: 260px;
+   text-align: center;
+   font-size: 20px;
+   letter-spacing: 1px;
+   font-weight: 900;
+   text-transform: uppercase;
+   text-decoration: none;
+}
+.navbar-header .navbar-brand .navbar-brand-img {
+   height: 50px;
+}
+.header-right {
+   color: #fff;
+   padding: 5px 10px 5px 10px;
+   float: right;
+   font-size: 16px;
+}
+.header-right a {
+   padding: 5px 20px;
+   font-size: 18px;
+}
+.navbar-side {
+   z-index: 1;
+   position: absolute;
+   width: 260px;
+   border: none;
+   background-color: #bf003f;
+}
+.navbar-default {
+   border: 0px solid black;
+}
+
+.sidebar-collapse .nav {
+   padding: 0;
+}
+
+.sidebar-collapse,
+.sidebar-collapse .nav {
+   background: none;
+}
+.nav {
+   padding-left: 0;
+   margin-bottom: 0;
+   margin-top: 0;
+   list-style: none;
+   min-height: 100vh;
+}
+
+.user-img-div {
+   min-height: 140px;
+   padding: 20px;
+   background-color: #49b57f;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.user-img-div img {
+   max-height: 60px;
+}
+.img-thumbnail {
+   display: inline-block;
+   width: 60px;
+   height: auto;
+   padding: 4px;
+   line-height: 1.42857143;
+   background-color: #fff;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   -webkit-transition: all 0.2s ease-in-out;
+   -o-transition: all 0.2s ease-in-out;
+   transition: all 0.2s ease-in-out;
+}
+.user-img-div .inner-text {
+   text-align: center;
+   position: relative;
+   color: #fff;
+   font-weight: 800;
+   line-height: 25px;
+}
+
+.sidebar-collapse > .nav > li > a {
+   padding: 15px 10px;
+}
+.sidebar-collapse .nav > li > a {
+   color: #fff;
+   background: #bf003f;
+   text-shadow: none;
+   padding: 15px 40px;
+   border-bottom: 1px solid #2f2e31;
+}
+
+.nav > li > a {
+   position: relative;
+   display: block;
+   padding: 10px 15px;
+}
+
+.sidebar-collapse .nav > li > a:hover,
+.sidebar-collapse .nav > li > a:focus {
+   background: #0a0a0a;
+   outline: 0;
+   text-decoration: none;
+}
