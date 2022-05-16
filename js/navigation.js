@@ -1,3 +1,4 @@
+import { numRound } from './helper.js';
 
 export const toggleMobileViewClass = () => {
     // this is like adding Media Queries for required css classes
@@ -53,6 +54,38 @@ export const scrollToTop = () => {
     scrollToTopBtn.addEventListener('click', scrollToTop);
     document.addEventListener('scroll', handleScroll);
 }
+
+export const toggleSearchInput = () => {
+    let searchBtnBox = document.querySelector(".search-btn-box");
+    searchBtnBox.addEventListener("click", (event) => {
+        document.querySelector(".search-input-box").classList.toggle("search-active");
+    });
+}
+
+export const stickyNavBar = () => {
+    let header = document.querySelector('#headerBanner');
+    let headerHeight = getComputedStyle(header).height.split('px')[0];
+    let navbar = document.querySelector('.navbar');
+    let scrollValue = window.scrollY;
+
+    let bodyHeight = numRound( getComputedStyle(document.querySelector('body')).height.split('px')[0] );
+    let footerHeight = numRound( getComputedStyle(document.querySelector('footer')).height.split('px')[0] ) + 200;
+
+    if (scrollValue > headerHeight) {
+        navbar.classList.add('is-fixed');
+    } else if (scrollValue < headerHeight) {
+        navbar.classList.remove('is-fixed');
+    }
+    // when scrolled to near to the footer
+    if (scrollValue > (bodyHeight - footerHeight)) {
+        navbar.classList.remove('is-fixed');
+    }
+    // when scrolled to bottom of the page
+    // if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+    //     if (navbar.classList.contains('is-fixed')) navbar.classList.remove('is-fixed');
+    // }
+}
+
 
 // export const toggleAvatarMenu = () => {
 //     let avatarMain = document.querySelector(".avatar-li");

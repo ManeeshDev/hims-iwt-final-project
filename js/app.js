@@ -1,29 +1,31 @@
 import * as navigation from './navigation.js';
+import * as common from './common.js';
 
-// TODO this will handle by user authentication
-let isLoggedUser = true;
+(function (doc) {
+    'use strict';
 
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(hidePreLoader, 1000);
-});
+    // TODO this will handle by user authentication
+    let isLoggedUser = true;
 
-window.onload = (event) => {
-    navigation.toggleMobileViewClass();
-    navigation.menuBarsToggler();
-    navigation.scrollToTop();
+    doc.addEventListener('DOMContentLoaded', () => {
+        common.hidePreLoader(1000);
+        navigation.toggleMobileViewClass();
+        navigation.menuBarsToggler();
+        navigation.toggleSearchInput();
+        navigation.scrollToTop();
 
-    !isLoggedUser ? document.querySelector('.avatar-li').remove() : document.querySelector('#regAndLogin').remove();
-};
+        !isLoggedUser ? doc.querySelector('.avatar-li').remove() : doc.querySelector('#regAndLogin').remove();
+    });
 
-window.addEventListener('resize', () => {
-    navigation.toggleMobileViewClass();
-});
+    window.addEventListener('resize', () => {
+        navigation.toggleMobileViewClass();
+    });
 
-const hidePreLoader = () => {
-    console.log('|================ DOM Content Loaded ================|');
-    document.body.classList.remove('loading');
-    document.querySelector('#preLoader').style.visibility = 'hidden';
-}
+    window.addEventListener('scroll', () => {
+        navigation.stickyNavBar();
+    });
+
+}(document));
 
 
 
