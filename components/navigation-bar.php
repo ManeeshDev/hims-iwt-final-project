@@ -19,13 +19,28 @@
             <li>
                 <a href="#">Services<i class="arrow down"></i></a>
                 <ul class="dropdown-list">
-                    <li><a href="#">SEO Optimization</a></li>
-                    <li><a href="#">Digital marketing</a></li>
-                    <li><a href="#">Web Development</a></li>
-                    <li><a href="#">Web Design</a></li>
-                    <li><a href="#">Software development</a></li>
-                    <li><a href="#">Branding</a></li>
-                    <li><a href="#">Content writing</a></li>
+                    <li><a href="#">Savings and Spending Accounts (HRA/HSA/FSA)</a></li>
+                    <li><a href="#">Prescription Drugs Covered by Your Plan</a></li>
+                    <li><a href="#">Virtual Care Options</a></li>
+                    <li><a href="#">Home Delivery Pharmacy</a></li>
+                    <li><a href="#">Advancing the Race Dialogue</a></li>
+                    <li><a href="#">Dental Health</a></li>
+                    <li><a href="#">Disaster Resource Center</a></li>
+                    <li><a href="#">Mental Health</a></li>
+                </ul>
+            </li>
+            <li>
+                <!-- TODO: get plans from table -->
+                <a href="#">Insurance Plans<i class="arrow down"></i></a>
+                <ul class="dropdown-list d-list-2">
+                    <li><a href="./policy.php">Health Insurance for Individuals</a></li>
+                    <li><a href="#">Health Insurance for Families</a></li>
+                    <li><a href="#">Health Insurance for Children</a></li>
+                    <li><a href="#">Dental Insurance</a></li>
+                    <li><a href="#">Vision Insurance</a></li>
+                    <li><a href="#">Medicare</a></li>
+                    <li><a href="#">International Health Insurance</a></li>
+                    <li><a href="#">Other Supplemental Insurance</a></li>
                 </ul>
             </li>
             <li><a href="#">Q&A</a></li>
