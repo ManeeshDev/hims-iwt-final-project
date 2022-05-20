@@ -77,9 +77,13 @@ nav ul.dropdown-list:before {
     content: "";
     position: absolute;
     top: -20px;
-    right: 96px;
+    right: 191px;
     border: 10px solid;
     border-color: transparent transparent var(--smoke) transparent;
+}
+
+nav ul.dropdown-list.d-list-2:before{
+    right: 129px !important;
 }
 
 .nav-wrapper ul.dropdown-list li {
@@ -112,7 +116,7 @@ nav ul.dropdown-list:before {
 }
 
 .reg-btn {
-    background: var(--dark-gray);
+    background: var(--mid-gray);
     color: var(--pure);
     border: 0 transparent;
     min-width: 100px;
@@ -124,7 +128,7 @@ nav ul.dropdown-list:before {
 }
 
 .login-btn:hover {
-    box-shadow: inset 400px 0 0 0 var(--dark-gray);
+    box-shadow: inset 400px 0 0 0 var(--mid-gray);
 }
 
 .reg-btn:hover {
@@ -156,7 +160,7 @@ nav ul.dropdown-list:before {
 }
 
 .mobile-view ul.nav-list {
-    background: linear-gradient(45deg, var(--primary), var(--dark-gray));
+    background: linear-gradient(45deg, var(--primary), var(--mid-gray));
     position: fixed;
     left: 0;
     top: 0;
@@ -205,7 +209,7 @@ nav ul.dropdown-list:before {
 }
 
 .mobile-view .nav-wrapper ul.dropdown-list li a {
-    color: var(--dark-gray);
+    color: var(--mid-gray);
 }
 
 .mobile-view .avatar-img {
@@ -232,7 +236,7 @@ nav ul.dropdown-list:before {
     opacity: 0;
     top: 48px;
     background: var(--smoke);
-    color: var(--dark-gray);
+    color: var(--mid-gray);
     padding: 10px;
     font-size: 14px;
     font-weight: 600;
@@ -246,7 +250,7 @@ nav ul.dropdown-list:before {
 }
 
 .search-input::placeholder {
-    color: var(--dark-gray);
+    color: var(--mid-gray);
     opacity: 0.9;
     font-weight: normal;
 }
@@ -304,7 +308,7 @@ nav ul.dropdown-list:before {
     overflow: hidden;
     display: inline-block;
     text-align: center;
-    background: linear-gradient(45deg, var(--primary), var(--dark-gray));
+    background: linear-gradient(45deg, var(--primary), var(--mid-gray));
     width: -webkit-fill-available;
 }
 
@@ -418,7 +422,7 @@ li.avatar-li:hover .avatar-menu {
 }
 
 .scroll-to-top-btn:hover {
-    background-color: var(--dark-gray);
+    background-color: var(--mid-gray);
     /* glowShadow come from helper file @Keyframes */
     animation: glowShadow 3.0s linear infinite alternate;
 }

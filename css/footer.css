@@ -165,8 +165,8 @@ footer {
 .subscribe-form input {
     width: 100%;
     padding: 14px 28px;
-    background: var(--dark-gray);
-    border: 1px solid var(--dark-gray);
+    background: var(--mid-gray);
+    border: 1px solid var(--mid-gray);
     color: var(--light);
 }
 
@@ -199,7 +199,7 @@ footer {
 
 .copyright-area {
     background: #202020;
-    padding: 25px 0;
+    padding: 0;
 }
 
 .copyright-area p {

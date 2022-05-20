@@ -14,20 +14,23 @@
 }
 
 :root {
-  /* ==== Color Variables :this variables help to maintain the theme === */
-  --primary: #00ff95;
-  --primary-1: #119c50;
-  --secondary: #ff3e7e;
-  --secondary-1: #720529;
-  --dark: #232323;
-  --light: #ffffff;
-  --pure: #fff;
-  --smoke: whitesmoke;
-  --dark-gray: #999;
-  --nav-bar-bg: rgba(255, 255, 255, 0.89);
-  --main-banner-bg: #a0e1c6;
-  --footer-bg: #26292d;
-  --footer-text: #a7a7a7;
+   /* ==== Color Variables :this variables help to maintain the theme === */
+   --primary: #00ff95;
+   --primary-1: #119c50;
+   --secondary: #ff3e7e;
+   --secondary-1: #720529;
+   --primary-b: #6499ff;
+   --dark: #232323;
+   --light: #ffffff;
+   --pure: #fff;
+   --smoke: whitesmoke;
+   --mid-gray: #999;
+   --dark-gray: #5e5e5e;
+   --nav-bar-bg: rgba(255, 255, 255, 0.89);
+   --main-banner-bg: #a0e1c6;
+   --footer-bg: #26292d;
+   --footer-text: #a7a7a7;
+   --form-label: #b5c1cc;
 }
 
 /* ==== Default styles === */
@@ -52,7 +55,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
    border-radius: 10px;
-   background: linear-gradient(45deg, var(--primary), var(--dark-gray));
+   background: linear-gradient(45deg, var(--primary), var(--mid-gray));
    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
@@ -138,10 +141,10 @@ h6,
 }
 
 .pre-loader-gif {
-  background: url('../images/page-pre-loader.gif') no-repeat center center;
-  height: 100%;
-  width: 100%;
-  z-index: 9999999;
+   background: url('../images/page-pre-loader.gif') no-repeat center center;
+   height: 100%;
+   width: 100%;
+   z-index: 9999999;
 }
 
 /* ==== Buttons === */

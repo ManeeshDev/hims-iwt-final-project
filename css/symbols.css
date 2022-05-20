@@ -1,6 +1,6 @@
 /* ==== Arrow Heads === */
 .arrow {
-    border: solid var(--dark-gray);
+    border: solid var(--mid-gray);
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
