@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2022 at 11:58 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Generation Time: May 21, 2022 at 06:41 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -51,11 +51,26 @@ CREATE TABLE `agent` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `buy_policy`
+--
+
+CREATE TABLE `buy_policy` (
+  `client_id` int(11) UNSIGNED NOT NULL,
+  `policy_id` int(11) UNSIGNED NOT NULL,
+  `start_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `client`
 --
 
 CREATE TABLE `client` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `user_id` int(11) UNSIGNED DEFAULT NULL,
   `agent_id` int(11) UNSIGNED DEFAULT NULL,
   `state` varchar(100) DEFAULT NULL,
@@ -66,6 +81,24 @@ CREATE TABLE `client` (
   `marital_state` enum('single','married','divorced') DEFAULT NULL,
   `gender` enum('male','female') DEFAULT NULL,
   `registered_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `policy`
+--
+
+CREATE TABLE `policy` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `coverage` int(10) UNSIGNED DEFAULT NULL,
+  `age_limit` int(10) UNSIGNED DEFAULT NULL,
+  `benefit` varchar(255) DEFAULT NULL,
+  `per_month` float UNSIGNED DEFAULT NULL,
+  `term` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -118,12 +151,25 @@ ALTER TABLE `agent`
   ADD KEY `user_id` (`user_id`);
 
 --
+-- Indexes for table `buy_policy`
+--
+ALTER TABLE `buy_policy`
+  ADD PRIMARY KEY (`client_id`,`policy_id`),
+  ADD KEY `buy_policy_policy_fk` (`policy_id`);
+
+--
 -- Indexes for table `client`
 --
 ALTER TABLE `client`
   ADD PRIMARY KEY (`id`),
   ADD KEY `client_users_fk` (`user_id`),
   ADD KEY `client_agent_fk` (`agent_id`);
+
+--
+-- Indexes for table `policy`
+--
+ALTER TABLE `policy`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -156,6 +202,12 @@ ALTER TABLE `agent`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `policy`
+--
+ALTER TABLE `policy`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
@@ -176,6 +228,13 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `agent`
   ADD CONSTRAINT `agent_users_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `buy_policy`
+--
+ALTER TABLE `buy_policy`
+  ADD CONSTRAINT `buy_policy_client_fk` FOREIGN KEY (`client_id`) REFERENCES `client` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `buy_policy_policy_fk` FOREIGN KEY (`policy_id`) REFERENCES `policy` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Constraints for table `client`
