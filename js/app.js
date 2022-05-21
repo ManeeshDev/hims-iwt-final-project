@@ -5,7 +5,7 @@ import * as common from './common.js';
     'use strict';
 
     // TODO this will handle by user authentication
-    let isLoggedUser = true;
+   //  let isLoggedUser = true;
 
     doc.addEventListener('DOMContentLoaded', () => {
         common.hidePreLoader(1000);
@@ -15,7 +15,7 @@ import * as common from './common.js';
         navigation.scrollToTop();
         common.setRandomImgToPolicyForm();
 
-        !isLoggedUser ? doc.querySelector('.avatar-li').remove() : doc.querySelector('#regAndLogin').remove();
+      //   !isLoggedUser ? doc.querySelector('.avatar-li').remove() : doc.querySelector('#regAndLogin').remove();
     });
 
     window.addEventListener('resize', () => {

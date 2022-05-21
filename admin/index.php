@@ -1,4 +1,9 @@
-<?php include_once(dirname(__FILE__) .  '/../includes/config.php') ?>
+<?php
+include_once(dirname(__FILE__) .  '/../includes/config.php');
+
+$authorized_roles = ['admin'];
+include_once(dirname(__FILE__) .  '/../includes/authenticate.php')
+?>
 <!DOCTYPE html>
 <html lang="en">
 
