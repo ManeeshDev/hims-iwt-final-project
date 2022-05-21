@@ -14,6 +14,11 @@ function getClientByUserId($userID) {
     $query = "SELECT * FROM `client` WHERE `user_id`='" . $userId . "'";
     $result = readQuery($conn, $query);
 
+    if (mysqli_num_rows($result) == 0) {
+        return false;
+    }
+    $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
     mysqli_close($conn);
-    return $result;
+    return $result[0];
 }
