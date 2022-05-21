@@ -1,5 +1,8 @@
 <?php
-
+include_once(dirname(__FILE__) .  '/includes/config.php');
+include_once(dirname(__FILE__) .  '/php/functions/validator.php');
+$authorized_roles = ['user'];
+include_once(dirname(__FILE__) .  '/includes/authenticate.php')
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +28,7 @@
     </div>
 
     <!-- ================================== CALL NAV-BAR HERE ================================== -->
-    <?php include_once './navigation-bar.php' ?>
+    <?php include_once './components/navigation-bar.php' ?>
     <!-- ===================================== END NAV-BAR ===================================== -->
 
     <main>
@@ -33,28 +36,29 @@
         <div class="enquiry-form">
 		<h1><b>ENQUIRY FORM</b></h1>
 		 <p><b>If you have any queries kindly take a moment to fill up this form,our reprentatives will contact you shortly.<b></p>
-		<form action="#" method="post">
+		<form action="./php/actions/enquiry.php" method="post">
+        <?php show_message(); ?>
 			<p><b>Title:</b></p>
 			<input type="text" name="title" placeholder="title">
             <p><b>Subject:</b></p>
-            <form>
                 <select name = "subject">
+                <option value = "">"SELECT SUBJECT"</option>
                     <option value = "PROFILE VARIFICATION">PROFILE VARIFICATION</option>
                     <option value = "TECHNICAL">TECHNICAL</option>
                     <option value = "PAYMENTS">PAYMENTS</option>
                     <option value = "PACKAGES">PACKAGES</option>
                     <option value = "OTHERS">OTHERS</option>
                 </select>
-            </form>
 			<p><b>Description:</b></p>
-            <textarea name="discription" placeholder="discription" rows ="10" cols = "90"></textarea>
+            <textarea name="description" placeholder="description" rows ="10" cols = "90"></textarea>
+            <input type="hidden" name="action" value="create-enquiry">
 			<button type="submit">SUBMIT</button>
 		</form>
 	</div>
     </main>
 
     <!-- ================================ CALL FOOTER HERE ================================ -->
-    <?php include_once "./footer.php" ?>
+    <?php include_once "./components/footer.php" ?>
     <!-- ================================   END FOOTER    ================================= -->
 
     <!-- ====== SCROLL TO TOP BUTTON ====== -->
