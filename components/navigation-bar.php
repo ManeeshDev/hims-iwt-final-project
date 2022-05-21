@@ -67,7 +67,7 @@
             </div>
             <li class="avatar-li">
                 <div class="avatar-img-div">
-                    <img src="./images/3.png" class="avatar-img" alt="profile_img" />
+                    <img src="./images/user-avatar.svg" class="avatar-img" alt="profile_img" />
                 </div>
 
                 <div class="avatar-menu">

@@ -277,6 +277,9 @@
 .pb-50 {
    padding-bottom: 50px;
 }
+.pl-15 {
+   padding-left: 15px !important;
+}
 
 /* ==== Text classes === */
 .text-center {
@@ -291,7 +294,7 @@
    text-align: right !important;
 }
 
-/* ==== Shadow class === */
+/* ==== Float class === */
 .float-r {
     float: right !important;
 }
