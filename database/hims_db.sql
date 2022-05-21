@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2022 at 06:41 PM
+-- Generation Time: May 21, 2022 at 10:27 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `user_id` int(11) UNSIGNED NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -104,6 +104,24 @@ CREATE TABLE `policy` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `ticket`
+--
+
+CREATE TABLE `ticket` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `subject` varchar(100) DEFAULT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 0,
+  `answer` varchar(255) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `agent_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -172,6 +190,12 @@ ALTER TABLE `policy`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `ticket`
+--
+ALTER TABLE `ticket`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -193,7 +217,7 @@ ALTER TABLE `user_contact`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `agent`
@@ -202,9 +226,21 @@ ALTER TABLE `agent`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `client`
+--
+ALTER TABLE `client`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `policy`
 --
 ALTER TABLE `policy`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `ticket`
+--
+ALTER TABLE `ticket`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
