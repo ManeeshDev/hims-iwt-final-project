@@ -45,7 +45,7 @@ function getBaseUrl()
 {
     $ip_reg = preg_match('/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\z/', $_SERVER['HTTP_HOST']);
     $server_host_name = '';
-    if (($_SERVER['HTTP_HOST'] == "localhost" || $ip_reg) && $_SERVER['HTTP_HOST'] != 'hims') $server_host_name = "/hims";
+    if (($_SERVER['HTTP_HOST'] == "localhost" || $ip_reg) && $_SERVER['HTTP_HOST'] != 'hims-iwt-final-project') $server_host_name = "/hims-iwt-final-project";
     $base_url  = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]" . $server_host_name;
     return $base_url;
 }
