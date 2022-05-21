@@ -1,5 +1,5 @@
 <?php
-
+include_once(dirname(__FILE__) .  '/includes/config.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
-    <title>HIMS | Health Insurance Management System</title>
+    <title><?= APP_NAME ?> | Health Insurance Management System</title>
     <!-- Favicon -->
     <link href="./images/favicon.ico" rel="icon" />
     <!-- CALL APP STYLE SHEET -->
@@ -18,16 +18,13 @@
 </head>
 
 <body class="mobile-view loading">
-
     <!-- =========== PAGE PRE-LOADER =============================== -->
     <div class="pre-loader" id="preLoader">
         <div class="pre-loader-gif"></div>
     </div>
-
     <!-- ================================== CALL NAV-BAR HERE ================================== -->
-    <?php include_once './navigation-bar.php' ?>
+    <?php include_once(dirname(__FILE__) .  '/components/navigation-bar.php') ?>
     <!-- ===================================== END NAV-BAR ===================================== -->
-
     <main>
         <!-- =========== START BANNER AREA =============================== -->
         <section id="headerBanner">
@@ -37,22 +34,18 @@
                         <div class="col-6">
                             <div class="banner-text">
                                 <span class="fadeInUp-3s">Investment Retirement Insurance</span>
-
                                 <h1 class="fadeInUp-3s">The Right Protection to Keep You Moving Forward</h1>
-
                                 <p class="fadeInUp-3s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                                       eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum.</p>
-
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum.</p>
                                 <div class="fadeInUp-4s">
                                     <button class="btn primary-btn mr-3">Get Started</button>
                                     <button class="btn secondary-btn">Find An Agent</button>
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-6 pr-0">
                             <div class="banner-img fadeInUp-2s">
-                                <img src="./images/home-page-bg.svg"alt="Image" />
+                                <img src="./images/home-page-bg.svg" alt="Image" />
                             </div>
                         </div>
                     </div>
@@ -66,7 +59,6 @@
             </div>
         </section>
         <!-- =========== END BANNER AREA =============================== -->
-
         <!--    TODO Remove: Temp added div   -->
         <section id="headerBanner">
             <div class="container">
@@ -77,19 +69,16 @@
                 </div>
             </div>
         </section>
-
     </main>
-
     <!-- ================================ CALL FOOTER HERE ================================ -->
-    <?php include_once "./footer.php" ?>
+    <?php include_once(dirname(__FILE__) .  '/components/footer.php') ?>
     <!-- ================================   END FOOTER    ================================= -->
-
     <!-- ====== SCROLL TO TOP BUTTON ====== -->
     <button class="scroll-to-top-btn">
         <i class="arrow up"></i>
     </button>
-
     <!-- CALL APP JS MODULE -->
     <script src="./js/app.js" type="module"></script>
 </body>
+
 </html>

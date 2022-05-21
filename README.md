@@ -8,7 +8,7 @@ _hims-iwt-final-project_
  2. Create a folder in your server directory (use repo. project-name).
  3. Run your servers (apache server & mysql server).
  3. Make a new Database (`db-name`) in your MySQL-DBMS (`phpMyAdmin`).
- 4. Import tables by `db-name.sql` from `project/database` directory.
+ 4. Import tables (`table-name.sql files`) from `project/database` directory.
  
 ##### ::
     > git clone git@example.org/user/repository-name-directory.git
@@ -18,7 +18,7 @@ _hims-iwt-final-project_
         >> in xampp: run xampp app > click start - apache & mysql
     > make new database by project db-name.
         >> http://localhost/phpmyadmin/
-    > import db-name.sql file to your created database.
+    > import tables (`table-name.sql files`) to your created database.
         >> http://localhost/phpmyadmin/index.php?route=/server/import&lang=en 
 
 ##### Run App::
