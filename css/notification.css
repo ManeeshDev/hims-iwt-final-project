@@ -1,0 +1,81 @@
+.notification {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999999;
+    color: #fff;
+    padding: 0 25px 25px 25px;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    /* visibility: hidden; */
+}
+
+.notification .container {
+    background: #fdfdfd;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, 
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    padding: 25px;
+    border-radius: 4px;
+    max-width: 460px;
+    position: relative;
+}
+
+.notification .nt-text-content {
+    color: var(--dark-gray);
+    line-height: 1.4;
+}
+
+.notification .nt-close-btn {
+    color: #000 !important;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    border: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 30px;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    opacity: .5;
+    color: inherit;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: 0 0;
+    -webkit-transition: opacity .2s ease;
+    transition: opacity .2s ease;
+}
+
+.notification .nt-close-btn:focus {
+    outline: 0;
+}
+
+.notification .nt-close-btn:hover {
+    opacity: 1;
+    color: rgb(250, 39, 39) !important;
+}
+
+.slide-in {
+    /* slideIn come from  @Keyframes in helper.css */
+    animation: slideIn 4.5s forwards;
+    -webkit-animation: slideIn 4.5s forwards;
+}
+
+.slide-out {
+    /* slideOut come from  @Keyframes in helper.css */
+    animation: slideOut 2.5s forwards;
+    -webkit-animation: slideOut 2.5s forwards;
+}

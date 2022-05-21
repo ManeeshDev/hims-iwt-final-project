@@ -14,3 +14,14 @@ export const setRandomImgToPolicyForm = () => {
     }
     return false;
 }
+
+export const closeNotificationCard = () => {
+    let notificationCloseBtn = document.querySelector("#notificationCloseBtn");
+    let notificationCard = document.querySelector("#notificationCard");
+    notificationCloseBtn.addEventListener("click", (event) => {
+        notificationCard.classList.add('slide-out');
+        setTimeout(() => {
+            notificationCard.remove();
+        }, 1500);
+    });
+}
