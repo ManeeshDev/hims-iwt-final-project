@@ -1,5 +1,6 @@
 <?php
-include_once(dirname(__FILE__) .  '/includes/config.php');
+    include_once(dirname(__FILE__) .  '/includes/config.php');
+    include_once(dirname(__FILE__) .  '/php/functions/validator.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +27,21 @@ include_once(dirname(__FILE__) .  '/includes/config.php');
     <?php include_once(dirname(__FILE__) .  '/components/navigation-bar.php') ?>
     <!-- ===================================== END NAV-BAR ===================================== -->
     <main>
+        <!-- =========== NOTIFICATION CARD =============================== -->
+        <?php if (isset($_SESSION['ERRORS'])) : ?>
+            <div id="notificationCard" class="notification slide-in">
+                <div class="container">
+                    <div class="notification-content">
+                        <div class="nt-text-content">
+                            <?php show_message(); ?>
+                        </div>
+                    </div>
+                    <button class="nt-close-btn" id="notificationCloseBtn">×</button>
+                </div>
+            </div>
+        <?php endif; ?>
+        <!-- =========== END NOTIFICATION CARD =============================== -->
+
         <!-- =========== START BANNER AREA =============================== -->
         <section id="headerBanner">
             <div class="main-banner-area">

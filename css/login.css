@@ -8,12 +8,15 @@ a {
    -o-transition: all 0.4s;
    -moz-transition: all 0.4s;
 }
+
 a:focus {
    outline: none !important;
 }
+
 a:hover {
    text-decoration: none;
 }
+
 h1,
 h2,
 h3,
@@ -22,6 +25,7 @@ h5,
 h6 {
    margin: 0;
 }
+
 p {
    font-size: 14px;
    line-height: 1.7;
@@ -43,6 +47,7 @@ button {
    border: none;
    background: 0 0;
 }
+
 button:hover {
    cursor: pointer;
 }
@@ -50,23 +55,28 @@ button:hover {
 .footer-section {
    margin-top: 0px !important;
 }
+
 .txt1 {
    font-size: 15px;
    line-height: 1.4;
    color: #999;
 }
+
 .txt2 {
    font-size: 15px;
    line-height: 1.4;
    color: #4272d7;
 }
+
 .hov1:hover {
    text-decoration: underline;
 }
+
 .limiter {
    width: 100%;
    margin: 0 auto;
 }
+
 .container-login {
    width: 100%;
    min-height: 100vh;
@@ -79,8 +89,10 @@ button:hover {
    justify-content: center;
    align-items: center;
    padding: 15px;
-   background: #e9faff;
+   margin-bottom: 100px;
+   margin-top: 25px;
 }
+
 .wrap-login {
    width: 500px;
    background: #fff;
@@ -92,9 +104,11 @@ button:hover {
    -o-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.1);
    -ms-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.1);
 }
+
 .login-form {
    width: 100%;
 }
+
 .login-form-title {
    display: block;
 
@@ -103,15 +117,18 @@ button:hover {
    line-height: 1.2;
    text-align: center;
 }
+
 .wrap-input {
    width: 100%;
    position: relative;
    background-color: #fff;
    border: 1px solid #e6e6e6;
 }
+
 .wrap-input.rs1 {
    border-top: none;
 }
+
 .input {
    display: block;
    width: 100%;
@@ -121,6 +138,7 @@ button:hover {
    color: #666;
    line-height: 1.2;
 }
+
 input.input {
    height: 68px;
    padding: 0 25px;
@@ -135,6 +153,7 @@ input.input {
    display: flex;
    flex-wrap: wrap;
 }
+
 .login-form-btn {
    display: -webkit-box;
    display: -webkit-flex;
@@ -157,9 +176,11 @@ input.input {
    -moz-transition: all 0.4s;
    transition: all 0.4s;
 }
+
 .login-form-btn:hover {
    background-color: #333;
 }
+
 .validate-input {
    position: relative;
 }
