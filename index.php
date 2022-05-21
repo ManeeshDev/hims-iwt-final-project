@@ -1,6 +1,4 @@
-<?php
-
-?>
+<?php include_once(dirname(__FILE__) .  '/includes/config.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +8,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
-    <title>HIMS | Health Insurance Management System</title>
+    <title><?= APP_NAME ?> | Health Insurance Management System</title>
     <!-- Favicon -->
     <link href="./images/favicon.ico" rel="icon" />
     <!-- CALL APP STYLE SHEET -->
@@ -25,7 +23,7 @@
     </div>
 
     <!-- ================================== CALL NAV-BAR HERE ================================== -->
-    <?php include_once './navigation-bar.php' ?>
+    <?php include_once(dirname(__FILE__) .  '/components/navigation-bar.php') ?>
     <!-- ===================================== END NAV-BAR ===================================== -->
 
     <main>
@@ -81,7 +79,7 @@
     </main>
 
     <!-- ================================ CALL FOOTER HERE ================================ -->
-    <?php include_once "./footer.php" ?>
+    <?php include_once(dirname(__FILE__) .  '/components/footer.php') ?>
     <!-- ================================   END FOOTER    ================================= -->
 
     <!-- ====== SCROLL TO TOP BUTTON ====== -->

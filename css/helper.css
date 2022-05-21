@@ -225,6 +225,17 @@
 .mt-20 {
    margin-top: 20px;
 }
+
+.my-5,
+.mt-5 {
+    margin-top: 3rem !important;
+}
+
+.my-5,
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+
 .py-5,
 .pt-5 {
    padding-top: 3rem !important;
@@ -278,6 +289,15 @@
 
 .text-right {
    text-align: right !important;
+}
+
+/* ==== Shadow class === */
+.float-r {
+    float: right !important;
+}
+
+.float-l {
+    float: left !important;
 }
 
 /* ==== Shadow class === */

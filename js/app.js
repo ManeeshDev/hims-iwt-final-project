@@ -13,6 +13,7 @@ import * as common from './common.js';
         navigation.menuBarsToggler();
         navigation.toggleSearchInput();
         navigation.scrollToTop();
+        common.setRandomImgToPolicyForm();
 
         !isLoggedUser ? doc.querySelector('.avatar-li').remove() : doc.querySelector('#regAndLogin').remove();
     });
@@ -26,7 +27,3 @@ import * as common from './common.js';
     });
 
 }(document));
-
-
-
-
