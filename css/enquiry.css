@@ -1,0 +1,54 @@
+.enquiry-form{
+	color:white;
+    max-width:50%;
+    margin:50px auto;
+    border-radius:20px;
+    background: rgb(80, 220, 188);
+    padding:30px;
+    border: 0px;
+    background: linear-gradient(135deg,#71b7e6,#9b59b6);
+    
+}
+.enquiry-form h1{
+	font-size:30px;
+	text-align: center;
+	text-transform:uppercase;
+	margin: 40px 0;
+    
+}
+.enquiry-form p {
+	font-size: 20px;
+	margin: 15px 0;
+    color:aliceblue;
+}
+.enquiry-form input{
+	font-size: 18px;
+	padding: 15px 10px;
+	width: 100%;
+	border: 0;
+    border-radius: 5px;
+	outline: none;
+    
+}
+.enquiry-form select{
+    width: 100%;
+    border: 1px black;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 1px grey;
+    padding: 15px 10px 15px 10px;
+}
+.enquiry-form button{
+	font-size: 18px;
+	font-weight: bold;
+	margin: 20px;
+	padding: 10px 15px;
+	width: 50%;
+	border: 0;
+	border-radius:5px;
+	background-color:linear-gradient(135deg,#71b7e6,#9b59b6);
+   
+}
+
+.enquiry-form button:hover {
+	color:red;
+}
