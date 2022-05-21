@@ -1,5 +1,7 @@
 <?php
-include_once(dirname(__FILE__) .  '/includes/config.php');
+require_once(dirname(__FILE__) .  '/includes/config.php');
+include_once(dirname(__FILE__) .  '/php/functions/validator.php');
+// var_dump(password_verify(123456, '$2y$10$oFkLu6g2swa4CS/2ix3gOu2VAwApHCpAPEadeBD9PszFUFNKJrgBu'));exit;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +25,7 @@ include_once(dirname(__FILE__) .  '/includes/config.php');
         <div class="pre-loader-gif"></div>
     </div>
     <!-- ================================== CALL NAV-BAR HERE ================================== -->
-    <?php include_once './navigation-bar.php' ?>
+    <?php include_once './components/navigation-bar.php' ?>
     <!-- ===================================== END NAV-BAR ===================================== -->
     <main>
         <div class="limiter">
@@ -33,7 +35,8 @@ include_once(dirname(__FILE__) .  '/includes/config.php');
                         <span class="login-form-title pb-33">
                             Account Login
                         </span>
-                        <div class="wrap-input validate-input mb-5">
+                        <?php show_message(); ?>
+                        <div class="wrap-input validate-input mb-5x">
                             <input class="input" type="email" name="email" placeholder="Email">
                         </div>
                         <div class="wrap-input validate-input">
@@ -57,7 +60,7 @@ include_once(dirname(__FILE__) .  '/includes/config.php');
         </div>
     </main>
     <!-- ================================ CALL FOOTER HERE ================================ -->
-    <?php include_once "./footer.php" ?>
+    <?php include_once "./components/footer.php" ?>
     <!-- ================================   END FOOTER    ================================= -->
     <!-- ====== SCROLL TO TOP BUTTON ====== -->
     <button class="scroll-to-top-btn">

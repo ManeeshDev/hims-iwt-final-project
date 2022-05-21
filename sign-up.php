@@ -1,3 +1,8 @@
+<?php
+require_once(dirname(__FILE__) .  '/includes/config.php');
+include_once(dirname(__FILE__) .  '/php/functions/validator.php');
+ 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +25,7 @@
         <div class="pre-loader-gif"></div>
     </div>
     <!-- ================================== CALL NAV-BAR HERE ================================== -->
-    <?php include_once './navigation-bar.php' ?>
+    <?php include_once './components/navigation-bar.php' ?>
     <!-- ===================================== END NAV-BAR ===================================== -->
     <main>
         <div class="limiter">
@@ -28,22 +33,23 @@
                 <div class="wrap-login pl-55 pr-55 pt-65 pb-50">
                     <form class="login-form validate-form" action="php/actions/register.php" method="post">
                         <span class="login-form-title pb-33">
-                            Create Account 
+                            Create Account
                         </span>
-                        <div class="wrap-input validate-input mb-5">
+                        <?php show_message(); ?>
+                        <div class="wrap-input validate-input mb-5x mt-20">
                             <input class="input" type="text" name="name" placeholder="Your name">
                         </div>
-                        <div class="wrap-input validate-input mb-5">
+                        <div class="wrap-input validate-input mb-5x">
                             <input class="input" type="email" name="email" placeholder="Email">
                         </div>
-                        <div class="wrap-input validate-input mb-5">
+                        <div class="wrap-input validate-input mb-5x">
                             <input class="input" type="password" name="password" placeholder="Password">
                         </div>
                         <div class="wrap-input validate-input">
                             <input class="input" type="password" name="confirm-password" placeholder="Confirm Password">
                         </div>
                         <div class="container-login-form-btn mt-20">
-                            <input type="hidden" name="action" value="login">
+                            <input type="hidden" name="action" value="register">
                             <button class="login-form-btn">Sign up</button>
                         </div>
                         <div class="text-center pt-45 pb-4">
@@ -60,7 +66,7 @@
         </div>
     </main>
     <!-- ================================ CALL FOOTER HERE ================================ -->
-    <?php include_once "./footer.php" ?>
+    <?php include_once "./components/footer.php" ?>
     <!-- ================================   END FOOTER    ================================= -->
     <!-- ====== SCROLL TO TOP BUTTON ====== -->
     <button class="scroll-to-top-btn">

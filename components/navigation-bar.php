@@ -57,35 +57,41 @@
                     </div>
                 </div>
             </li>
-            <div class="d-flex" id="regAndLogin">
-                <li>
-                    <button class="btn login-btn">Log in</button>
-                </li>
-                <li class="ml-0">
-                    <button class="btn reg-btn">Register</button>
-                </li>
-            </div>
-            <li class="avatar-li">
-                <div class="avatar-img-div">
-                    <img src="./images/3.png" class="avatar-img" alt="profile_img" />
+            <?php if (!isset($_SESSION['id'])) : ?>
+                <div class="d-flex" id="regAndLogin">
+                    <li>
+                        <button class="btn login-btn" onclick="location.href='<?= BASE_URL ?>/login.php'">Log in</button>
+                    </li>
+                    <li class="ml-0">
+                        <button class="btn reg-btn" onclick="location.href='<?= BASE_URL ?>/sign-up.php'">Register</button>
+                    </li>
                 </div>
+            <?php else : ?>
+                <li class="avatar-li">
+                    <div class="avatar-img-div">
+                        <img src="./images/3.png" class="avatar-img" alt="profile_img" />
+                    </div>
 
-                <div class="avatar-menu">
-                    <div class="avatar-menu-left">
-                        <img src="./images/3.png" class="avatar-img-big" alt="profile_img" />
-                        <button class="btn logout-btn">Logout</button>
+                    <div class="avatar-menu">
+                        <div class="avatar-menu-left">
+                            <img src="./images/3.png" class="avatar-img-big" alt="profile_img" />
+                            <form method="POST" action="<?= BASE_URL ?>/php/actions/logout.php">
+                                <input type="hidden" name="action" value="logout" />
+                                <button onclick="event.preventDefault(); this.closest('form').submit();" class="btn logout-btn">Logout</button>
+                            </form>
+                        </div>
+                        <div class="avatar-menu-right">
+                            <ul>
+                                <li><a href="#">Location</a></li>
+                                <li><a href="#">Favorites</a></li>
+                                <li><a href="#">Add people</a></li>
+                                <li><a href="#">Settings</a></li>
+                                <li><a href="#">Downloads</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="avatar-menu-right">
-                        <ul>
-                            <li><a href="#">Location</a></li>
-                            <li><a href="#">Favorites</a></li>
-                            <li><a href="#">Add people</a></li>
-                            <li><a href="#">Settings</a></li>
-                            <li><a href="#">Downloads</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
+                </li>
+            <?php endif; ?>
         </ul>
     </div>
     <!-- =========== End Nav bar Area =============================== -->
