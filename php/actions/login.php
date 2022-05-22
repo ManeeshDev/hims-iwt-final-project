@@ -37,6 +37,8 @@ if (isset($_POST['action']) && $_POST['action'] === "login") {
                     break;
                 case 'agent':
                 case 'admin':
+                    header('Location:' . BASE_URL . '/admin/');
+                    break;
                 case 'client':
                 default:
                     header('Location:' . BASE_URL . '/profile.php');

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2022 at 07:44 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: May 22, 2022 at 08:04 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,6 +33,13 @@ CREATE TABLE `admin` (
   `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `user_id`, `created_at`) VALUES
+(1, 1, '2022-05-22 23:21:22');
+
 -- --------------------------------------------------------
 
 --
@@ -47,6 +54,13 @@ CREATE TABLE `agent` (
   `basic_salary` double NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `agent`
+--
+
+INSERT INTO `agent` (`id`, `user_id`, `branch`, `rank`, `basic_salary`, `created_at`) VALUES
+(1, 2, 'galle', 'senior', 35000, '2022-05-22 23:21:56');
 
 -- --------------------------------------------------------
 
@@ -81,6 +95,41 @@ CREATE TABLE `client` (
   `marital_state` enum('single','married','divorced') DEFAULT NULL,
   `gender` enum('male','female') DEFAULT NULL,
   `registered_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `client`
+--
+
+INSERT INTO `client` (`id`, `user_id`, `agent_id`, `state`, `city`, `street`, `postal_code`, `dob`, `marital_state`, `gender`, `registered_at`) VALUES
+(1, 4, 1, 'galle', 'galle', 'galle Rd', '80000', '1998-04-09', 'single', 'male', '2022-05-22 23:23:14');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `fid` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `subject` varchar(50) DEFAULT NULL,
+  `feedback` varchar(60) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forum`
+--
+
+CREATE TABLE `forum` (
+  `id` int(11) NOT NULL,
+  `uname` varchar(100) DEFAULT NULL,
+  `mobile` varchar(12) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `comments` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -134,6 +183,13 @@ CREATE TABLE `ticket` (
   `agent_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `ticket`
+--
+
+INSERT INTO `ticket` (`id`, `user_id`, `subject`, `title`, `status`, `answer`, `description`, `created_at`, `agent_id`) VALUES
+(1, 3, 'PROFILE VARIFICATION', 'How to verify email', 0, NULL, 'I need to verify my email address', '2022-05-22 23:33:13', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -153,6 +209,16 @@ CREATE TABLE `users` (
   `password_reset_code` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `nic`, `profile_photo`, `user_type`, `email_verified`, `email_verify_code`, `password_reset_code`, `created_at`) VALUES
+(1, 'Admin', 'admin@hims.lk', '$2y$10$ZvJK7epTSqEYKDEdHsnaQeLyu16W3/FnBsaU2uUMbT0nRPgXXyWy2', NULL, NULL, 'admin', 0, NULL, NULL, '2022-05-22 23:19:45'),
+(2, 'Agent', 'agent@hims.lk', '$2y$10$oU6aOBMrWUe.ZEebFBnFvOtjo5T91PCO5arp7WCDwjY3s68eA2t6.', NULL, NULL, 'agent', 0, NULL, NULL, '2022-05-22 23:20:08'),
+(3, 'Navod', 'hansajith18@gmail.com', '$2y$10$mUDpsLc0dotNimOxfbvMx.J.4e/Dj5xNzNMLEz3pNJc9zZd0VM83S', NULL, NULL, 'user', 0, NULL, NULL, '2022-05-22 23:20:46'),
+(4, 'Hansajith', 'hansajith23@gmail.com', '$2y$10$Dtx.BbTsqIHPF60F5fL2muQkT2ATL4ebnHf0bTnIRmXIWqnUnsYZW', NULL, NULL, 'client', 0, NULL, NULL, '2022-05-22 23:21:08');
 
 -- --------------------------------------------------------
 
@@ -199,6 +265,18 @@ ALTER TABLE `client`
   ADD KEY `client_agent_fk` (`agent_id`);
 
 --
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`fid`);
+
+--
+-- Indexes for table `forum`
+--
+ALTER TABLE `forum`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `policy`
 --
 ALTER TABLE `policy`
@@ -232,19 +310,31 @@ ALTER TABLE `user_contact`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `agent`
 --
 ALTER TABLE `agent`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `forum`
+--
+ALTER TABLE `forum`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `policy`
@@ -256,13 +346,13 @@ ALTER TABLE `policy`
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
