@@ -35,6 +35,17 @@
     margin-bottom: 35px;
 }
 
+.main-banner-area .banner-text form {
+    margin: 0;
+    padding: 0;
+    display: unset;
+}
+
+.main-banner-area .banner-text a:visited {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
 .main-banner-area .shape {
     position: absolute;
     left: 0;

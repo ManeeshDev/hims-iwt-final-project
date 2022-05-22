@@ -37,6 +37,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
+    if (isset($_POST['findAnAgent'])) {
+        header('Location: ' . BASE_URL . '/client.php?for=findAnAgent');
+        exit();
+    }
+
 }
 
 addError("403: Access denied!", 'danger');

@@ -14,6 +14,14 @@
 
     $policyId = isset($_GET['pId']) ? $_GET['pId'] : '';
     $policyTerm = isset($_GET['pTerm']) ? $_GET['pTerm'] : '';
+
+    $forWhat = isset($_GET['for']) ? $_GET['for'] : '';
+
+    if ($forWhat != 'findAnAgent') {
+        header('Location: ' . BASE_URL . '/index.php');
+        exit();
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -145,6 +153,7 @@
                                 <div class="form-btn">
                                     <input type="hidden" name="policy-id" value="<?= $policyId ?>"/>
                                     <input type="hidden" name="policy-term" value="<?= $policyTerm ?>"/>
+                                    <input type="hidden" name="for-what" value="<?= $forWhat ?>"/>
                                     <button type="submit" value="Submit" name="submitProfile"  id="submitProfile" class="btn primary-btn">
                                         Submit Profile
                                     </button>
