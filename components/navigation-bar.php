@@ -1,3 +1,6 @@
+<?php
+    $policies = getAllPolicies();
+?>
 <nav class="navbar shadow">
     <!-- =========== Start Nav bar Area =============================== -->
     <div class="nav-container container nav-wrapper" id="navbar">
@@ -33,14 +36,9 @@
                 <!-- TODO: get plans from table -->
                 <a href="#">Insurance Plans<i class="arrow down"></i></a>
                 <ul class="dropdown-list d-list-2">
-                    <li><a href="./policy.php">Health Insurance for Individuals</a></li>
-                    <li><a href="#">Health Insurance for Families</a></li>
-                    <li><a href="#">Health Insurance for Children</a></li>
-                    <li><a href="#">Dental Insurance</a></li>
-                    <li><a href="#">Vision Insurance</a></li>
-                    <li><a href="#">Medicare</a></li>
-                    <li><a href="#">International Health Insurance</a></li>
-                    <li><a href="#">Other Supplemental Insurance</a></li>
+                    <?php foreach ($policies as $policy) : ?>
+                        <li><a href="./policy.php?pId=<?= $policy["id"] ?>"><?= $policy["title"] ?></a></li>
+                    <?php endforeach; ?>
                 </ul>
             </li>
             <li><a href="#">Q&A</a></li>

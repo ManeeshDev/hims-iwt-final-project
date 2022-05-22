@@ -1,4 +1,14 @@
-<?php include_once(dirname(__FILE__) .  '/includes/config.php') ?>
+<?php
+    include_once(dirname(__FILE__) .  '/includes/config.php');
+    // include_once(dirname(__FILE__) .  '/includes/authenticate.php');
+    include_once(dirname(__FILE__) .  '/php/functions/validator.php');
+    include_once(dirname(__FILE__) .  '/php/functions/policy.php');
+
+    $email = isset($_SESSION["email"]) ? $_SESSION["email"] : '';
+    $name = isset($_SESSION["name"]) ? $_SESSION["name"] : '';
+    $nic = isset($_SESSION["nic"]) ? $_SESSION["nic"] : '';
+    $phone = isset($_SESSION["phone"]) ? $_SESSION["phone"] : '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +37,21 @@
     <!-- ===================================== END NAV-BAR ===================================== -->
 
     <main>
+        <!-- =========== NOTIFICATION CARD =============================== -->
+        <?php if (isset($_SESSION['ERRORS'])) : ?>
+            <div id="notificationCard" class="notification slide-in">
+                <div class="container">
+                    <div class="notification-content">
+                        <div class="nt-text-content">
+                            <?php show_message(); ?>
+                        </div>
+                    </div>
+                    <button class="nt-close-btn" id="notificationCloseBtn">×</button>
+                </div>
+            </div>
+        <?php endif; ?>
+        <!-- =========== END NOTIFICATION CARD =============================== -->
+
         <!-- =========== CLIENT HEADER =============================== -->
         <section id="clientHeaderSec">
             <div class="container my-5">
@@ -50,7 +75,7 @@
                             </div>
                         </div>
                         <div class="client-form-right">
-                            <form action="#" method="POST" id="buyPolicyForm">
+                            <form action="/php/actions/client.php" method="POST" id="clientForm">
                                 <div class="mb-30">
                                     <h2>Hello Maneesh!</h2>
                                 </div>
@@ -70,11 +95,11 @@
                                     <hr>
                                     <div class="form-common">
                                         <span class="form-label">Date of Birth <span class="float-r">:</span></span>
-                                        <input class="form-control" type="date" required>
+                                        <input class="form-control" type="date" name="dob" required>
                                     </div>
                                     <div class="form-common">
                                         <span class="form-label">Marital State <span class="float-r">:</span></span>
-                                        <select class="form-control" required>
+                                        <select class="form-control" name="marital-state" required>
                                             <option value="" selected="true" disabled="disabled">Select marital state</option>
                                             <option value="single">Single</option>
                                             <option value="married">Married</option>
@@ -84,7 +109,7 @@
                                     </div>
                                     <div class="form-common">
                                         <span class="form-label">Gender <span class="float-r">:</span></span>
-                                        <select class="form-control" required>
+                                        <select class="form-control" name="gender" required>
                                             <option value="" selected="true" disabled="disabled">Select gender</option>
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
@@ -96,19 +121,19 @@
                                     </div>
                                     <div class="form-common">
                                         <span class="form-label pl-15">State <span class="float-r">:</span></span>
-                                        <input class="form-control" type="text" placeholder="Enter your state">
+                                        <input class="form-control" type="text" name="state" placeholder="Enter your state">
                                     </div>
                                     <div class="form-common">
                                         <span class="form-label pl-15">City <span class="float-r">:</span></span>
-                                        <input class="form-control" type="text" placeholder="Enter your city">
+                                        <input class="form-control" type="text" name="city" placeholder="Enter your city">
                                     </div>
                                     <div class="form-common">
                                         <span class="form-label pl-15">Street <span class="float-r">:</span></span>
-                                        <input class="form-control" type="text" placeholder="Enter your street">
+                                        <input class="form-control" type="text" name="street" placeholder="Enter your street">
                                     </div>
                                     <div class="form-common">
                                         <span class="form-label pl-15">Postal Code <span class="float-r">:</span></span>
-                                        <input class="form-control" type="text" placeholder="Enter your postal code">
+                                        <input class="form-control" type="text" name="postal-code" placeholder="Enter your postal code">
                                     </div>
                                 </div>
                                 <div class="form-btn">

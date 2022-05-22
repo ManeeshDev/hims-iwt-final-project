@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2022 at 10:27 PM
+-- Generation Time: May 22, 2022 at 02:25 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -93,7 +93,8 @@ CREATE TABLE `policy` (
   `id` int(11) UNSIGNED NOT NULL,
   `title` varchar(255) NOT NULL,
   `coverage` int(10) UNSIGNED DEFAULT NULL,
-  `age_limit` int(10) UNSIGNED DEFAULT NULL,
+  `age_min` int(10) UNSIGNED DEFAULT NULL,
+  `age_max` int(10) UNSIGNED DEFAULT NULL,
   `benefit` varchar(255) DEFAULT NULL,
   `per_month` float UNSIGNED DEFAULT NULL,
   `term` varchar(255) DEFAULT NULL,

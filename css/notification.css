@@ -10,13 +10,18 @@
     /* visibility: hidden; */
 }
 
+.notification ::-webkit-scrollbar {
+    width: 4px !important;
+    height: 4px !important;
+}
+
 .notification .container {
     background: #fdfdfd;
     -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
         rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
         rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, 
-        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
         rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     padding: 25px;
     border-radius: 4px;
@@ -24,9 +29,25 @@
     position: relative;
 }
 
+.notification .nt-text-content .alert:first-child {
+    margin: 0;
+}
+
+.notification .nt-text-content .alert {
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+}
+
+.notification .nt-text-content .alert-success {
+    min-width: fit-content;
+}
+
 .notification .nt-text-content {
     color: var(--dark-gray);
     line-height: 1.4;
+    font-size: 14px;
+    overflow: auto;
+    max-height: 200px;
 }
 
 .notification .nt-close-btn {

@@ -19,6 +19,7 @@ export const closeNotificationCard = () => {
     let notificationCloseBtn = document.querySelector("#notificationCloseBtn");
     let notificationCard = document.querySelector("#notificationCard");
     notificationCloseBtn.addEventListener("click", (event) => {
+        notificationCard.classList.remove('slide-in');
         notificationCard.classList.add('slide-out');
         setTimeout(() => {
             notificationCard.remove();
