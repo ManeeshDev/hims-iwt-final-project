@@ -51,8 +51,9 @@ if ($user_id) {
                     <?php endforeach; ?>
                 </ul>
             </li>
-            <li><a href="<?= BASE_URL ?>/forum.php">Forum</a></li>
-            <li><a href="<?= BASE_URL ?>/contact.php">Contact</a></li>
+            <li><a href="./forum.php">Forum</a></li>
+            <li><a href="./client_feedback_new.php">Feedback</a></li>
+            <li><a href="./contact.php">Contact</a></li>
             <li>
                 <div class="search">
                     <div class="search-btn-box">
@@ -90,10 +91,9 @@ if ($user_id) {
                         <div class="avatar-menu-right">
                             <ul>
                                 <li><a href="<?= BASE_URL ?>/profile.php">My Profile</a></li>
-                                <li><a href="<?= BASE_URL ?>/create-enquiry.php">Add Enquiry</a></li>
-                                <li><a href="<?= BASE_URL ?>/enquiries.php">My Enquiries</a></li>
-                                <li><a href="#">Add People</a></li>
-                                <li><a href="#">Downloads</a></li>
+                                <li><a href="<?= BASE_URL ?>/create-enquiry.php">Add enquiry</a></li>
+                                <li><a href="<?= BASE_URL ?>/enquiries.php">My enquiries</a></li> 
+                                <!-- <li><a href="#">Downloads</a></li> -->
                             </ul>
                         </div>
                     </div>

@@ -6,9 +6,10 @@
             </a>
         </div>
         <div class="header-right">
-            <a href="<?php echo "logout.php" ?>" class="btn secondary-btn" title="Logout">
-                <i class="fa fa-power-off"></i>
-            </a>
+            <form method="POST" action="<?= BASE_URL ?>/php/actions/logout.php">
+                <input type="hidden" name="action" value="logout" />
+                <button onclick="event.preventDefault(); this.closest('form').submit();" class="btn secondary-btn"><i class="fa fa-power-off"></i></button>
+            </form> 
         </div>
     </nav>
     <!-- /. NAV TOP  -->
