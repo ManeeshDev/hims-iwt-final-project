@@ -1,0 +1,14 @@
+o Project Group ID: MLB_07.01_01
+o Batch No: Y1.S2.WD.It.07.01
+o Topic: Health Insurance Management System
+o Project link: https://mysliit-my.sharepoint.com/:u:/g/personal/it21156410_my_sliit_lk/EVqJwtXZFMFLmXYJ-tbsgOYBPT2xUrxIQwO8VyqI1XTZfw?e=3OEGyS
+o Project Github link: https://github.com/it21156038/hims-iwt-final-project
+o Group member details 
+
+Member Id   Member name          email_address	         contact no   Implemented Functions
+ 
+IT21156038	Nawanjala N.K.N.	   it21156038@my.sliit.lk	0763655390   Ticket
+IT21156410	Fonseka M.M.N.H	   it21156410@my.sliit.lk	0774639349   Login,Register,Profile management
+IT21157264	Rupasiri M.C.I	      it21157264@my.sliit.lk	0776763347   Feedback
+IT21171888	Dasanayaka D.M.U.H	it21171888@my.sliit.lk	0702899071   Forum
+IT21169908	Prashantha K.G.M	   it21169908@my.sliit.lk	0766171525   Policy,Buy policy, Client Create
