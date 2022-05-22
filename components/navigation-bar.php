@@ -16,7 +16,7 @@ if ($user_id) {
     <!-- =========== Start Nav bar Area =============================== -->
     <div class="nav-container container nav-wrapper" id="navbar">
         <div class="brand">
-            <a href="./index.php">
+            <a href="<?= BASE_URL ?>/index.php">
                 <img src="./images/brand-logo.svg" class="brand-img" alt="brand_img" />
             </a>
         </div>
@@ -27,27 +27,27 @@ if ($user_id) {
         </div>
         <ul class="nav-list">
             <li class="active">
-                <a href="./index.php">Home</a>
+                <a href="<?= BASE_URL ?>/index.php">Home</a>
             </li>
-            <li><a href="./about.php">About</a></li>
+            <li><a href="<?= BASE_URL ?>/about.php">About</a></li>
             <li>
                 <a href="javascript:void(0)">Services<i class="arrow down"></i></a>
                 <ul class="dropdown-list">
-                    <li><a href="./services.php?sId=">Savings and Spending Accounts (HRA/HSA/FSA)</a></li>
-                    <li><a href="./services.php?sId=">Prescription Drugs Covered by Your Plan</a></li>
-                    <li><a href="./services.php?sId=">Virtual Care Options</a></li>
-                    <li><a href="./services.php?sId=">Home Delivery Pharmacy</a></li>
-                    <li><a href="./services.php?sId=">Advancing the Race Dialogue</a></li>
-                    <li><a href="./services.php?sId=">Dental Health</a></li>
-                    <li><a href="./services.php?sId=">Disaster Resource Center</a></li>
-                    <li><a href="./services.php?sId=">Mental Health</a></li>
+                    <li><a href="<?= BASE_URL ?>/services.php?sId=">Savings and Spending Accounts (HRA/HSA/FSA)</a></li>
+                    <li><a href="<?= BASE_URL ?>/services.php?sId=">Prescription Drugs Covered by Your Plan</a></li>
+                    <li><a href="<?= BASE_URL ?>/services.php?sId=">Virtual Care Options</a></li>
+                    <li><a href="<?= BASE_URL ?>/services.php?sId=">Home Delivery Pharmacy</a></li>
+                    <li><a href="<?= BASE_URL ?>/services.php?sId=">Advancing the Race Dialogue</a></li>
+                    <li><a href="<?= BASE_URL ?>/services.php?sId=">Dental Health</a></li>
+                    <li><a href="<?= BASE_URL ?>/services.php?sId=">Disaster Resource Center</a></li>
+                    <li><a href="<?= BASE_URL ?>/services.php?sId=">Mental Health</a></li>
                 </ul>
             </li>
             <li>
                 <a href="javascript:void(0)">Insurance Plans<i class="arrow down"></i></a>
                 <ul class="dropdown-list d-list-2">
                     <?php foreach ($policies as $policy) : ?>
-                        <li><a href="./policy.php?pId=<?= $policy["id"] ?>"><?= $policy["title"] ?></a></li>
+                        <li><a href="<?= BASE_URL ?>/policy.php?pId=<?= $policy["id"] ?>"><?= $policy["title"] ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             </li>
