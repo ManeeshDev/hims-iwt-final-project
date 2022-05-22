@@ -33,7 +33,7 @@
                     <a href="agent.php"><i class="fa fa-life-saver "></i>AGENTS</a>
                 </li>
                 <li>
-                    <a href="policy.php"><i class="fa fa-pencil-square-o "></i>POLICY</a>
+                    <a href="./policy-admin.php"><i class="fa fa-pencil-square-o "></i>POLICY</a>
                 </li>
                 <li>
                     <a href="nominee.php"><i class="fa fa-heart "></i>NOMINEE</a>
