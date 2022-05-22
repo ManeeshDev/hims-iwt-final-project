@@ -90,8 +90,8 @@ if ($user_id) {
                         <div class="avatar-menu-right">
                             <ul>
                                 <li><a href="<?= BASE_URL ?>/profile.php">My Profile</a></li>
-                                <li><a href="#">Location</a></li>
-                                <li><a href="#">Favorites</a></li>
+                                <li><a href="<?= BASE_URL ?>/create-enquiry.php">Add enquiry</a></li>
+                                <li><a href="<?= BASE_URL ?>/enquiries.php">My enquiries</a></li>
                                 <li><a href="#">Add people</a></li>
                                 <li><a href="#">Downloads</a></li>
                             </ul>
