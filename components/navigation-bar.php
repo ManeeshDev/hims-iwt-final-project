@@ -51,7 +51,7 @@ if ($user_id) {
                     <?php endforeach; ?>
                 </ul>
             </li>
-            <li><a href="./Q&A.php">Q&A</a></li>
+            <li><a href="./forum.php">Forum</a></li>
             <li><a href="./contact.php">Contact</a></li>
             <li>
                 <div class="search">
