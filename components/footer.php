@@ -37,7 +37,7 @@
                     <div class="row">
                         <div class="col col-4 mb-25 footer-widget">
                             <div class="footer-logo">
-                                <a href="index.php">
+                                <a href="<?= BASE_URL ?>/index.php">
                                     <img src="./images/brand-logo.svg" alt="brand_img" />
                                 </a>
                             </div>
@@ -47,13 +47,13 @@
                             </div>
                             <div class="footer-social-icon">
                                 <span>Follow us</span>
-                                <a href="#">
+                                <a href="https://www.facebook.com/" target="blank">
                                     <img src="./images/icons/facebook.svg" class="icon-social" alt="facebook-icon" />
                                 </a>
-                                <a href="#">
+                                <a href="https://twitter.com/" target="blank">
                                     <img src="./images/icons/twitter.svg" class="icon-social" alt="twitter-icon" />
                                 </a>
-                                <a href="#">
+                                <a href="https://www.instagram.com/" target="blank">
                                     <img src="./images/icons/instagram.svg" class="icon-social" alt="instagram-icon" />
                                 </a>
                             </div>
@@ -63,15 +63,11 @@
                                 <h3>Useful Links</h3>
                             </div>
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">about</a></li>
-                                <li><a href="#">services</a></li>
-                                <li><a href="#">portfolio</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Our Services</a></li>
+                                <li><a href="<?= BASE_URL ?>/index.php">Home</a></li>
+                                <li><a href="<?= BASE_URL ?>/about.php">About</a></li>
+                                <li><a href="<?= BASE_URL ?>/services.php?sId=">Services</a></li>
+                                <li><a href=".<?= BASE_URL ?>/contact.php">Contact</a></li>
                                 <li><a href="#">Expert Team</a></li>
-                                <li><a href="#">Contact us</a></li>
                                 <li><a href="#">Latest News</a></li>
                             </ul>
                         </div>
@@ -85,7 +81,7 @@
                             <div class="subscribe-form">
                                 <form action="#" method="POST">
                                     <input placeholder="Email Address" type="text">
-                                    <a href="#">
+                                    <a href="javascript:void(0)">
                                         <img src="./images/icons/telegram-plane.svg" alt="telegramPlane-icon" />
                                     </a>
                                 </form>
@@ -103,11 +99,11 @@
                         <div class="col-6 text-right">
                             <div class="footer-nav">
                                 <ul>
-                                    <li><a href="#">Home</a></li>
+                                    <li><a href="<?= BASE_URL ?>/index.php">Home</a></li>
                                     <li><a href="#">Terms</a></li>
                                     <li><a href="#">Privacy</a></li>
                                     <li><a href="#">Policy</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="<?= BASE_URL ?>/contact.php">Contact</a></li>
                                 </ul>
                             </div>
                         </div>

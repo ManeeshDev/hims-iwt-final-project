@@ -77,14 +77,10 @@ include_once(dirname(__FILE__) .  '/php/functions/validator.php');
             </div>
         </section>
         <!-- =========== END BANNER AREA =============================== -->
-        <!--    TODO Remove: Temp added div   -->
-        <section id="headerBanner">
+        <!--    TODO: Remove Temp added div   -->
+        <section id="midArea">
             <div class="container">
-                <div style="height:600px;color:black;text-align:center;padding:30px;margin-top:200px">
-                    <button class="btn">
-                        <b>+</b> Add Home Content
-                    </button>
-                </div>
+                <div style="height:600px;color:black;text-align:center;padding:30px;margin-top:200px"></div>
             </div>
         </section>
     </main>
