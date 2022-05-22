@@ -1,5 +1,6 @@
 <?php
-    $policies = getAllPolicies();
+include_once(dirname(__FILE__) .  '/../php/functions/policy.php');
+$policies = getAllPolicies();
 ?>
 <nav class="navbar shadow">
     <!-- =========== Start Nav bar Area =============================== -->
