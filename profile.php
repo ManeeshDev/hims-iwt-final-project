@@ -2,7 +2,7 @@
 require_once(dirname(__FILE__) .  '/includes/config.php');
 include_once(dirname(__FILE__) .  '/php/functions/validator.php');
 
-$authorized_roles = ['user'];
+$authorized_roles = ['user', 'client', 'admin', 'agent']; // privilege user types
 include_once(dirname(__FILE__) .  '/includes/authenticate.php');
 include_once(dirname(__FILE__) .  '/php/functions/user.php');
 
@@ -20,7 +20,7 @@ $contacts = getUserContacts($user_id);
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
-    <title>Profile | Health Insurance Management System</title>
+    <title>My Profile | Health Insurance Management System</title>
     <!-- Favicon -->
     <link href="./images/favicon.ico" rel="icon" />
     <!-- CALL APP STYLE SHEET -->
@@ -47,26 +47,26 @@ $contacts = getUserContacts($user_id);
                     </div>
                 </div>
                 <div class="col-5 border-right">
-                    <div class="p-3 py-5">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="row px-3">
+                        <div class="mb-5x">
                             <h4 class="text-right">Profile Settings</h4>
                         </div>
                         <?php show_message(); ?>
                         <form action="<?= BASE_URL ?>/php/actions/profile.php" method="post" enctype="multipart/form-data">
                             <div class="row mt-2">
-                                <div class="col-12">
+                                <div class="col-12 py-0">
                                     <label class="labels">Name</label>
                                     <input type="text" class="form-control" name="name" placeholder="your name" value="<?= $user['name'] ?>" required>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-12 py-0">
                                     <label class="labels">Email</label>
                                     <input type="email" class="form-control" name="email" placeholder="enter email id" value="<?= $user['email'] ?>" required>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-12 py-0">
                                     <label class="labels">NIC</label>
                                     <input type="text" class="form-control" name="nic" placeholder="enter nic" value="<?= $user['nic'] ?>">
                                 </div>
-                                <div class="col-12">
+                                <div class="col-12 py-0">
                                     <label class="labels">Profile photo</label>
                                     <input type="file" class="form-control" name="profile_photo">
                                 </div>
@@ -92,26 +92,31 @@ $contacts = getUserContacts($user_id);
                     </div>
                 </div>
                 <div class="col-4">
-                    <form action="<?= BASE_URL ?>/php/actions/profile.php" method="post" enctype="multipart/form-data">
-                        <div class="p-3 py-5">
-                            <div class="col-12">
-                                <label class="labels">Current Password</label>
-                                <input class="form-control" type="password" name="current_password" placeholder="Password">
-                            </div>
-                            <div class="col-12">
-                                <label class="labels">New Password</label>
-                                <input type="password" class="form-control" name="new_password" placeholder="new password">
-                            </div>
-                            <div class="col-12">
-                                <label class="labels">Confirm New Password</label>
-                                <input class="form-control" type="password" name="confirm_password" placeholder="Confirm Password">
+                    <div class="row px-3">
+                        <div class="mb-5x">
+                            <h4 class="text-right">Change Password</h4>
+                        </div>
+                        <form action="<?= BASE_URL ?>/php/actions/profile.php" method="post" enctype="multipart/form-data">
+                            <div class="row mt-2">
+                                <div class="col-12 py-0">
+                                    <label class="labels">Current Password</label>
+                                    <input class="form-control" type="password" name="current_password" placeholder="Password">
+                                </div>
+                                <div class="col-12 py-0">
+                                    <label class="labels">New Password</label>
+                                    <input type="password" class="form-control" name="new_password" placeholder="New password">
+                                </div>
+                                <div class="col-12 pt-0">
+                                    <label class="labels">Confirm New Password</label>
+                                    <input class="form-control" type="password" name="confirm_password" placeholder="Confirm Password">
+                                </div>
                             </div>
                             <div class="mt-5 text-center">
                                 <input type="hidden" name="action" value="change-password">
                                 <button class="btn btn-primary profile-button" type="submit">Change password</button>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

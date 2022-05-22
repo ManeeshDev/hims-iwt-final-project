@@ -12,15 +12,17 @@
     <link href="./images/favicon.ico" rel="icon" />
     <!-- CALL APP STYLE SHEET -->
     <link href="./css/app.css" rel="stylesheet" />
+    <link href="./css/login.css" rel="stylesheet" />
+    <link href="./css/profile.css" rel="stylesheet" />
 </head>
 
-<body class="mobile-view loading">
+<body class="mobile-view loading body-bg-l-ocean">
     <!-- =========== PAGE PRE-LOADER =============================== -->
     <div class="pre-loader" id="preLoader">
         <div class="pre-loader-gif"></div>
     </div>
     <!-- ================================== CALL NAV-BAR HERE ================================== -->
-    <?php include_once './navigation-bar.php' ?>
+    <?php include_once './components/navigation-bar.php' ?>
     <!-- ===================================== END NAV-BAR ===================================== -->
     <main>
         <div class="limiter">
@@ -30,12 +32,14 @@
                         <span class="login-form-title pb-33">
                             Forgot Account Password
                         </span>
-                        <div class="wrap-input validate-input mb-5">
-                            <input class="input" type="email" name="email" placeholder="Email">
+                        <?php show_message(); ?>
+                        <div class="col-12 px-0 pt-0">
+                            <label class="labels">Email</label>
+                            <input class="form-control" type="email" name="email" placeholder="Email">
                         </div>
                         <div class="container-login-form-btn mt-20">
                             <input type="hidden" name="action" value="forgot">
-                            <button class="login-form-btn">Forgot</button>
+                            <button class="btn login-form-btn">Forgot</button>
                         </div>
                         <div class="text-center pt-45 pb-4">
                             <span class="txt1"></span>
@@ -51,7 +55,7 @@
         </div>
     </main>
     <!-- ================================ CALL FOOTER HERE ================================ -->
-    <?php include_once "./footer.php" ?>
+    <?php include_once "./components/footer.php" ?>
     <!-- ================================   END FOOTER    ================================= -->
     <!-- ====== SCROLL TO TOP BUTTON ====== -->
     <button class="scroll-to-top-btn">

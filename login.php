@@ -18,9 +18,10 @@ include_once(dirname(__FILE__) .  '/php/functions/validator.php');
     <!-- CALL APP STYLE SHEET -->
     <link href="./css/app.css" rel="stylesheet" />
     <link href="./css/login.css" rel="stylesheet" />
+    <link href="./css/profile.css" rel="stylesheet" />
 </head>
 
-<body class="mobile-view loading">
+<body class="mobile-view loading body-bg-l-ocean">
     <!-- =========== PAGE PRE-LOADER =============================== -->
     <div class="pre-loader" id="preLoader">
         <div class="pre-loader-gif"></div>
@@ -36,16 +37,18 @@ include_once(dirname(__FILE__) .  '/php/functions/validator.php');
                         <span class="login-form-title pb-33">
                             Account Login
                         </span>
-                        <?php show_message(); ?>
-                        <div class="wrap-input validate-input mb-5x">
-                            <input class="input" type="email" name="email" placeholder="Email">
+                        <?php show_message(); ?> 
+                        <div class="col-12 p-0">
+                            <label class="labels">Email</label>
+                            <input class="form-control" type="email" name="email" placeholder="Email">
                         </div>
-                        <div class="wrap-input validate-input">
-                            <input class="input" type="password" name="password" placeholder="Password">
+                        <div class="col-12 px-0 pt-0">
+                            <label class="labels">Password</label>
+                            <input class="form-control" type="password" name="password" placeholder="Password">
                         </div>
                         <div class="container-login-form-btn mt-20">
                             <input type="hidden" name="action" value="login">
-                            <button class="login-form-btn">Sign in</button>
+                            <button class="btn login-form-btn">Sign in</button>
                         </div>
                         <div class="text-center pt-45 pb-4">
                             <span class="txt1">Forgot</span>

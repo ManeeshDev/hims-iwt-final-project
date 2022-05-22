@@ -311,6 +311,23 @@
 .pt-65 {
    padding-top: 65px;
 }
+.p-0 {
+   padding: 0 !important;
+}
+.pb-0 {
+   padding-bottom: 0 !important;
+}
+.px-0 {
+   padding-left: 0 !important;
+   padding-right: 0 !important;
+}
+.py-0 {
+   padding-top: 0 !important;
+   padding-bottom: 0 !important;
+}
+.pt-0 {
+   padding-top: 0 !important;
+}
 .pb-4 {
    padding-bottom: 4px;
 }

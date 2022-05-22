@@ -30,6 +30,49 @@ function getUserContacts($user_id)
     return $contacts;
 }
 
+function isEmailExists($email)
+{
+    $conn = connect();
+    $email = $conn->real_escape_string($email);
+    $query = "SELECT `email` FROM `users` WHERE `email`= '$email' ";
+    $result = readQuery($conn, $query);
+    $num_rows = $result->num_rows;
+    if ($num_rows > 0) {
+        $result = $result->fetch_array();
+        return $result;
+    } else {
+        return FALSE;
+    }
+}
+function GenerateResetCode($email)
+{
+    $conn = connect();
+    $email = $conn->real_escape_string($email);
+    $rand = rand(10000, 99999);
+
+    $query = "UPDATE  `users` SET  `password_reset_code` = '$rand' WHERE `email` = '$email'";
+    $result = readQuery($conn, $query);
+
+    if ($result) {
+        return $rand;
+    } else {
+        return FALSE;
+    }
+}
+
+function getResetCodeUser($code)
+{
+    $conn = connect();
+    $code = $conn->real_escape_string($code);
+    $query = "SELECT * FROM `users` WHERE `password_reset_code`= '$code'";
+    $result = readQuery($conn, $query)->fetch_array();
+    if (!$result) {
+        return FALSE;
+    } else {
+        return $result;
+    }
+}
+
 function checkEmail($email, $user_id)
 {
     $conn = connect();

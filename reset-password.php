@@ -1,6 +1,7 @@
 <?php
 require_once(dirname(__FILE__) .  '/includes/config.php');
 include_once(dirname(__FILE__) .  '/php/functions/validator.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +21,7 @@ include_once(dirname(__FILE__) .  '/php/functions/validator.php');
     <link href="./css/profile.css" rel="stylesheet" />
 </head>
 
-<body class="mobile-view loading body-bg-l-ocean">
+<body class="mobile-view loading body-bg-l-ocean ">
     <!-- =========== PAGE PRE-LOADER =============================== -->
     <div class="pre-loader" id="preLoader">
         <div class="pre-loader-gif"></div>
@@ -32,18 +33,14 @@ include_once(dirname(__FILE__) .  '/php/functions/validator.php');
         <div class="limiter">
             <div class="container-login">
                 <div class="wrap-login pl-55 pr-55 pt-65 pb-50">
-                    <form class="login-form validate-form" action="php/actions/register.php" method="post">
+                    <form class="login-form validate-form" action="php/actions/forget-password.php" method="post">
                         <span class="login-form-title pb-33">
-                            Create Account
+                            Reset Password
                         </span>
                         <?php show_message(); ?>
                         <div class="col-12 p-0">
-                            <label class="labels">Full Name</label>
-                            <input class="form-control" type="text" name="name" placeholder="Your name">
-                        </div>
-                        <div class="col-12 p-0">
-                            <label class="labels">Email</label>
-                            <input class="form-control" type="email" name="email" placeholder="Email">
+                            <label class="labels">Reset code</label>
+                            <input class="form-control" type="text" name="password_reset_code" placeholder="Reset code">
                         </div>
                         <div class="col-12 p-0">
                             <label class="labels">Password</label>
@@ -54,8 +51,8 @@ include_once(dirname(__FILE__) .  '/php/functions/validator.php');
                             <input class="form-control" type="password" name="confirm-password" placeholder="Confirm Password">
                         </div> 
                         <div class="container-login-form-btn mt-20">
-                            <input type="hidden" name="action" value="register">
-                            <button class="btn login-form-btn">Sign up</button>
+                            <input type="hidden" name="action" value="reset">
+                            <button class="btn login-form-btn">Reset</button>
                         </div>
                         <div class="text-center pt-45 pb-4">
                             <span class="txt1">Forgot</span>
