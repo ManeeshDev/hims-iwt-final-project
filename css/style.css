@@ -46,8 +46,8 @@ html {
 
 body {
    font-family: "Lato", sans-serif;
-   background-color: var(--light-ocean) !important;
-   color: var(--pure);
+   background: var(--light);
+   color: #212529;
 }
 
 main {

@@ -1,7 +1,6 @@
 <?php
-    include_once(dirname(__FILE__) .  '/includes/config.php');
-    include_once(dirname(__FILE__) .  '/php/functions/validator.php');
-    include_once(dirname(__FILE__) .  '/php/functions/policy.php');
+include_once(dirname(__FILE__) .  '/includes/config.php');
+include_once(dirname(__FILE__) .  '/php/functions/validator.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

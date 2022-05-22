@@ -5,7 +5,8 @@ include_once(dirname(__FILE__) .  '/../functions/helper.php');
 include_once(dirname(__FILE__) .  '/../functions/validator.php');
 
 
-function createBuyPolicy($client) {
+function createBuyPolicy($client)
+{
     $conn = connect();
 
     if (!isset($_SESSION["id"])) {
@@ -16,7 +17,7 @@ function createBuyPolicy($client) {
     $policyId = $_POST['id'];
 
     $startDate = date("Y-m-d");
-    $endDate = date('Y-m-d', strtotime('+'. $_POST['term']));
+    $endDate = date('Y-m-d', strtotime('+' . $_POST['term']));
 
     $createQuery = "INSERT INTO `buy_policy` (`client_id`, `policy_id`, `start_date`, `end_date`) VALUES ('$clientId', '$policyId', '$startDate', '$endDate')";
     $result = readQuery($conn, $createQuery);
@@ -31,23 +32,26 @@ function createBuyPolicy($client) {
     }
 }
 
-function getAllPolicies() {
+function getAllPolicies()
+{
 
     $conn = connect();
 
     $query = "SELECT * FROM `policy`";
     $result = readQuery($conn, $query);
 
+    $policies = [];
     if (mysqli_num_rows($result) == 0) {
-        return false;
+        return $policies;
     }
-    $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    $policies = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     mysqli_close($conn);
-    return $result;
+    return $policies;
 }
 
-function getPolicyById($pId = 1) {
+function getPolicyById($pId = 1)
+{
 
     $conn = connect();
 

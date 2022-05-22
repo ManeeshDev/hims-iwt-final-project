@@ -3,7 +3,7 @@ include_once(dirname(__FILE__) .  '/../../includes/config.php');
 include_once(dirname(__FILE__) .  '/../functions/validator.php');
 
 if (isset($_POST['action']) && $_POST['action'] === "register") {
-    
+
     $conn = connect();
 
     check($_POST, [
@@ -45,10 +45,10 @@ if (isset($_POST['action']) && $_POST['action'] === "register") {
         exit();
     } else {
         addError(mysqli_error($conn), 'danger');
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit();
     }
-    addError("403: Access denied!", 'danger');
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
-    exit();
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
-    exit();
 }
+addError("403: Access denied!", 'danger');
+header('Location: ' . $_SERVER['HTTP_REFERER']);
+exit();
