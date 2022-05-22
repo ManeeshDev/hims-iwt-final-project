@@ -1,6 +1,5 @@
 <?php
     include_once(dirname(__FILE__) .  '/includes/config.php');
-    include_once(dirname(__FILE__) .  '/includes/authenticate.php');
     include_once(dirname(__FILE__) .  '/php/functions/validator.php');
     include_once(dirname(__FILE__) .  '/php/functions/policy.php');
 
@@ -16,7 +15,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
-    <title><?= APP_NAME ?> | Health Insurance Policies</title>
+    <title>Policy | Health Insurance Management System</title>
     <!-- Favicon -->
     <link href="./images/favicon.ico" rel="icon" />
     <!-- CALL APP STYLE SHEET -->

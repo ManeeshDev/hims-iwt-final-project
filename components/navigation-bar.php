@@ -16,7 +16,7 @@ if ($user_id) {
     <!-- =========== Start Nav bar Area =============================== -->
     <div class="nav-container container nav-wrapper" id="navbar">
         <div class="brand">
-            <a href="index.php">
+            <a href="./index.php">
                 <img src="./images/brand-logo.svg" class="brand-img" alt="brand_img" />
             </a>
         </div>
@@ -27,37 +27,36 @@ if ($user_id) {
         </div>
         <ul class="nav-list">
             <li class="active">
-                <a href="#">Home</a>
+                <a href="./index.php">Home</a>
             </li>
-            <li><a href="#">About</a></li>
+            <li><a href="./about.php">About</a></li>
             <li>
-                <a href="#">Services<i class="arrow down"></i></a>
+                <a href="javascript:void(0)">Services<i class="arrow down"></i></a>
                 <ul class="dropdown-list">
-                    <li><a href="#">Savings and Spending Accounts (HRA/HSA/FSA)</a></li>
-                    <li><a href="#">Prescription Drugs Covered by Your Plan</a></li>
-                    <li><a href="#">Virtual Care Options</a></li>
-                    <li><a href="#">Home Delivery Pharmacy</a></li>
-                    <li><a href="#">Advancing the Race Dialogue</a></li>
-                    <li><a href="#">Dental Health</a></li>
-                    <li><a href="#">Disaster Resource Center</a></li>
-                    <li><a href="#">Mental Health</a></li>
+                    <li><a href="./services.php?sId=">Savings and Spending Accounts (HRA/HSA/FSA)</a></li>
+                    <li><a href="./services.php?sId=">Prescription Drugs Covered by Your Plan</a></li>
+                    <li><a href="./services.php?sId=">Virtual Care Options</a></li>
+                    <li><a href="./services.php?sId=">Home Delivery Pharmacy</a></li>
+                    <li><a href="./services.php?sId=">Advancing the Race Dialogue</a></li>
+                    <li><a href="./services.php?sId=">Dental Health</a></li>
+                    <li><a href="./services.php?sId=">Disaster Resource Center</a></li>
+                    <li><a href="./services.php?sId=">Mental Health</a></li>
                 </ul>
             </li>
             <li>
-                <!-- TODO: get plans from table -->
-                <a href="#">Insurance Plans<i class="arrow down"></i></a>
+                <a href="javascript:void(0)">Insurance Plans<i class="arrow down"></i></a>
                 <ul class="dropdown-list d-list-2">
                     <?php foreach ($policies as $policy) : ?>
                         <li><a href="./policy.php?pId=<?= $policy["id"] ?>"><?= $policy["title"] ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             </li>
-            <li><a href="#">Q&A</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="./Q&A.php">Q&A</a></li>
+            <li><a href="./contact.php">Contact</a></li>
             <li>
                 <div class="search">
                     <div class="search-btn-box">
-                        <a href="#" class="search-btn">
+                        <a href="javascript:void(0)" class="search-btn">
                             <img src="./images/icons/search.svg" class="icon-search" alt="search-icon" />
                         </a>
                     </div>
