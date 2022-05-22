@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2022 at 02:25 AM
+-- Generation Time: May 22, 2022 at 07:44 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -101,6 +101,20 @@ CREATE TABLE `policy` (
   `created_at` datetime DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `policy`
+--
+
+INSERT INTO `policy` (`id`, `title`, `coverage`, `age_min`, `age_max`, `benefit`, `per_month`, `term`, `created_at`, `updated_at`) VALUES
+(1, 'Health Insurance for Individuals 🤍', 100, 18, 60, 'These essential health benefits include at least the following items and services, These essential health benefits include at least the following items and services.', 5000, '10 Years', '2022-05-22 04:04:06', '2022-05-22 04:04:06'),
+(2, 'Health Insurance for Families 🤍', 100, 1, 75, 'These essential health benefits include at least the following items and services, These essential health benefits include at least the following items and services.', 8000, '20 Years', '2022-05-22 04:04:06', '2022-05-22 04:04:06'),
+(3, 'Health Insurance for Children 🤍', 100, 1, 18, 'These essential health benefits include at least the following items and services, These essential health benefits include at least the following items and services.', 4500, '10 Years', '2022-05-22 04:04:06', '2022-05-22 04:04:06'),
+(4, 'Dental Insurance 🤍', 75, 21, 35, 'These essential health benefits include at least the following items and services, These essential health benefits include at least the following items and services.', 3000, '5 Years', '2022-05-22 04:04:06', '2022-05-22 04:04:06'),
+(5, 'Vision Insurance 🤍', 50, 45, 80, 'These essential health benefits include at least the following items and services, These essential health benefits include at least the following items and services.', 4000, '15 Years', '2022-05-22 04:04:06', '2022-05-22 04:04:06'),
+(6, 'Medicare 🤍', 100, 1, 45, 'These essential health benefits include at least the following items and services, These essential health benefits include at least the following items and services.', 2000, '10 Years', '2022-05-22 04:04:06', '2022-05-22 04:04:06'),
+(7, 'International Health Insurance 🤍', 50, 18, 35, 'These essential health benefits include at least the following items and services, These essential health benefits include at least the following items and services.', 8500, '5 Years', '2022-05-22 04:04:06', '2022-05-22 04:04:06'),
+(8, 'Other Supplemental Insurance 🤍', 25, 16, 55, 'These essential health benefits include at least the following items and services, These essential health benefits include at least the following items and services.', 6000, '5 Years', '2022-05-22 04:04:06', '2022-05-22 04:04:06');
 
 -- --------------------------------------------------------
 
@@ -236,7 +250,7 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT for table `policy`
 --
 ALTER TABLE `policy`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `ticket`
