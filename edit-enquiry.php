@@ -2,7 +2,15 @@
 include_once(dirname(__FILE__) .  '/includes/config.php');
 include_once(dirname(__FILE__) .  '/php/functions/validator.php');
 $authorized_roles = ['user'];
-include_once(dirname(__FILE__) .  '/includes/authenticate.php')
+include_once(dirname(__FILE__) .  '/includes/authenticate.php');
+$id = $_GET['id'];
+if ($id) {
+    $conn = connect();
+    $id = $conn->real_escape_string($id);
+    $query = "SELECT * FROM `ticket` WHERE `id`= $id ";
+    $ticket = readQuery($conn, $query)->fetch_assoc();
+     
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +21,7 @@ include_once(dirname(__FILE__) .  '/includes/authenticate.php')
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
-    <title>HIMS | Health Insurance Management System</title>
+    <title>Edit Ticket  | Health Insurance Management System</title>
     <!-- Favicon -->
     <link href="./images/favicon.ico" rel="icon" />
     <!-- CALL APP STYLE SHEET -->
@@ -39,19 +47,20 @@ include_once(dirname(__FILE__) .  '/includes/authenticate.php')
 		<form action="./php/actions/enquiry.php" method="post">
         <?php show_message(); ?>
 			<p><b>Title:</b></p>
-			<input type="text" name="title" placeholder="title">
+			<input type="text" value="<?= $ticket['title'] ?>" name="title" placeholder="title">
             <p><b>Subject:</b></p>
                 <select name = "subject">
                 <option value = "">"SELECT SUBJECT"</option>
-                    <option value = "PROFILE VARIFICATION">PROFILE VARIFICATION</option>
-                    <option value = "TECHNICAL">TECHNICAL</option>
-                    <option value = "PAYMENTS">PAYMENTS</option>
-                    <option value = "PACKAGES">PACKAGES</option>
-                    <option value = "OTHERS">OTHERS</option>
+                    <option value = "PROFILE VARIFICATION" <?= $ticket['subject'] == "PROFILE VARIFICATION" ? 'selected' :'' ?>>PROFILE VARIFICATION</option>
+                    <option value = "TECHNICAL" <?= $ticket['subject'] == "TECHNICAL" ? 'selected' :'' ?> >TECHNICAL</option>
+                    <option value = "PAYMENTS" <?= $ticket['subject'] == "PAYMENTS" ? 'selected' :'' ?>>PAYMENTS</option>
+                    <option value = "PACKAGES" <?= $ticket['subject'] == "PACKAGES" ? 'selected' :'' ?>>PACKAGES</option>
+                    <option value = "OTHERS"  <?= $ticket['subject'] == "OTHERS" ? 'selected' :'' ?>>OTHERS</option>
                 </select>
 			<p><b>Description:</b></p>
-            <textarea name="description" placeholder="description" rows ="10" cols = "90"></textarea>
-            <input type="hidden" name="action" value="create-enquiry">
+            <textarea name="description" placeholder="description" rows ="10" cols = "90"> <?= $ticket['description'] ?></textarea>
+            <input type="hidden" name="action" value="edit-enquiry">
+            <input type="hidden" name="id" value="<?= $id ?>">
 			<button type="submit">SUBMIT</button>
 		</form>
 	</div>

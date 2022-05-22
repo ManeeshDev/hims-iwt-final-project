@@ -2,7 +2,16 @@
 include_once(dirname(__FILE__) .  '/includes/config.php');
 include_once(dirname(__FILE__) .  '/php/functions/validator.php');
 $authorized_roles = ['user'];
-include_once(dirname(__FILE__) .  '/includes/authenticate.php')
+include_once(dirname(__FILE__) .  '/includes/authenticate.php');
+
+$user_id = $_SESSION['id'];
+$conn = connect();
+$query = "SELECT * FROM ticket WHERE user_id = $user_id";
+$result = mysqli_query($conn, $query);
+$tickets = [];
+while ($row = $result->fetch_array()) {
+    $tickets[] = $row;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,29 +41,34 @@ include_once(dirname(__FILE__) .  '/includes/authenticate.php')
     <!-- ===================================== END NAV-BAR ===================================== -->
 
     <main>
-    
-        <div class="enquiry-form">
-		<center><h1><b>ENQUIRY FORM</b></h1></center>
-		 <p><b>If you have any queries kindly take a moment to fill up this form,our reprentatives will contact you shortly.<b></p>
-		<form action="./php/actions/enquiry.php" method="post">
+        <h1 class="text-center">My enquiries</h1>
         <?php show_message(); ?>
-			<p><b>Title:</b></p>
-			<input type="text" name="title" placeholder="title">
-            <p><b>Subject:</b></p>
-                <select name = "subject">
-                <option value = "">"SELECT SUBJECT"</option>
-                    <option value = "PROFILE VARIFICATION">PROFILE VARIFICATION</option>
-                    <option value = "TECHNICAL">TECHNICAL</option>
-                    <option value = "PAYMENTS">PAYMENTS</option>
-                    <option value = "PACKAGES">PACKAGES</option>
-                    <option value = "OTHERS">OTHERS</option>
-                </select>
-			<p><b>Description:</b></p>
-            <textarea name="description" placeholder="description" rows ="10" cols = "90"></textarea>
-            <input type="hidden" name="action" value="create-enquiry">
-			<button type="submit">SUBMIT</button>
-		</form>
-	</div>
+        <div class="d-flex justify-center">
+            <table class="enquires">
+                <tr>
+                    <th>Title</th>
+                    <th>Subject</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+                <?php foreach ($tickets as $ticket) : ?>
+                    <tr>
+                        <td><?= $ticket['title'] ?></td>
+                        <td><?= $ticket['subject'] ?></td>
+                        <td><?= $ticket['description'] ?></td>
+                        <td>
+                            <center>
+                                <hr>
+                                <a href="edit-enquiry.php?id=<?= $ticket['id'] ?>">Edit</a>
+                                <a href="php/actions/enquiry.php?id=<?= $ticket['id'] ?>&action=delete-enquiry">Delete</a>
+                            </center>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
+
+
     </main>
 
     <!-- ================================ CALL FOOTER HERE ================================ -->
@@ -69,4 +83,5 @@ include_once(dirname(__FILE__) .  '/includes/authenticate.php')
     <!-- CALL APP JS MODULE -->
     <script src="./js/app.js" type="module"></script>
 </body>
+
 </html>
