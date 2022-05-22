@@ -2,8 +2,8 @@
 
 include_once(dirname(__FILE__) .  '/../../includes/config.php');
 include_once(dirname(__FILE__) .  '/../functions/validator.php');
-include_once(dirname(__FILE__) .  '/../functions/client.php');
 include_once(dirname(__FILE__) .  '/../functions/main.php');
+include_once(dirname(__FILE__) .  '/../functions/policy.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -19,6 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'city' => ['required' => TRUE],
             'street' => ['required' => TRUE],
             'postal-code' => ['required' => TRUE],
+            'policy-id' => ['required' => TRUE],
+            'policy-term' => ['required' => TRUE],
         ]);
         if (!passed()) {
             header('Location: ' . $_SERVER['HTTP_REFERER']);
@@ -40,13 +42,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dob = $_POST['dob'];
         $maritalState = $_POST['marital-state'];
         $gender = $_POST['gender'];
+        $policyID = $_POST['policy-id'];
+        $policyTerm = $_POST['policy-term'];
 
         $createQuery = "INSERT INTO `client` (`user_id`, `agent_id`, `state`, `city`, `street`, `postal_code`, `dob`, `marital_state`, `gender`) VALUES ('$userId', '$agentId', '$state', '$city', '$street', '$postalCode', '$dob', '$maritalState', '$gender')";
         $result = readQuery($conn, $createQuery);
         
         if ($result) {
             $last_id = $conn->insert_id;
-            addError("Your Client Profile successfully created.", 'success');
+
+            $client = getClientByUserId($userId);
+
+            if ($client && !empty($client)) {
+                $buyPolicy = createBuyPolicy($client, $policyID, $policyTerm);
+            }
+            if ($buyPolicy) {
+                addError($buyPolicy['message'], $buyPolicy['status']);
+            }
+            addError("Your Client Profile successfully created", 'success');
             header('Location: ' . BASE_URL . '/index.php');
             exit();
         } else {

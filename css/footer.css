@@ -10,7 +10,6 @@ footer {
 
 .footer-section {
     /* background: var(--footer-bg); */
-    background-color: var(--light-ocean);
     position: relative;
     margin-top: 5px;
 }

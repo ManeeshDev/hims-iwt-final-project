@@ -1,6 +1,6 @@
 <?php
     include_once(dirname(__FILE__) .  '/includes/config.php');
-    // include_once(dirname(__FILE__) .  '/includes/authenticate.php');
+    include_once(dirname(__FILE__) .  '/includes/authenticate.php');
     include_once(dirname(__FILE__) .  '/php/functions/validator.php');
     include_once(dirname(__FILE__) .  '/php/functions/policy.php');
 
@@ -23,7 +23,7 @@
     <link href="./css/app.css" rel="stylesheet" />
 </head>
 
-<body class="mobile-view loading">
+<body class="mobile-view loading body-bg-l-ocean">
 
     <!-- =========== PAGE PRE-LOADER =============================== -->
     <div class="pre-loader" id="preLoader">
@@ -79,37 +79,38 @@
                                     <div class="form-common">
                                         <span class="form-label">Title <span class="float-r">:</span></span>
                                         <h4><?= $insurancePlan["title"] ?></h4>
-                                        <input type="hidden" name="title" value="<?= $insurancePlan["title"] ?>" disabled/>
+                                        <input type="hidden" name="title" value="<?= $insurancePlan["title"] ?>"/>
                                     </div>
                                     <div class="form-common">
                                         <span class="form-label">Coverage <span class="float-r">:</span></span>
                                         <h4><?= $insurancePlan["coverage"] ?>%</h4>
-                                        <input type="hidden" name="title" value="<?= $insurancePlan["coverage"] ?>" disabled/>
+                                        <input type="hidden" name="coverage" value="<?= $insurancePlan["coverage"] ?>"/>
                                     </div>
                                     <div class="form-common">
                                         <span class="form-label">Age Limit <span class="float-r">:</span></span>
                                         <h4><?= $insurancePlan["age_min"] ?> to <?= $insurancePlan["age_max"] ?> Years</h4>
-                                        <input type="hidden" name="title" value="<?= $insurancePlan["age_min"] ?>" disabled/>
-                                        <input type="hidden" name="title" value="<?= $insurancePlan["age_max"] ?>" disabled/>
+                                        <input type="hidden" name="age_min" value="<?= $insurancePlan["age_min"] ?>"/>
+                                        <input type="hidden" name="age_max" value="<?= $insurancePlan["age_max"] ?>"/>
                                     </div>
                                     <div class="form-common">
                                         <span class="form-label">Benefits <span class="float-r">:</span></span>
                                         <h4><?= $insurancePlan["benefit"] ?></h4>
-                                        <input type="hidden" name="title" value="<?= $insurancePlan["benefit"] ?>" disabled/>
+                                        <input type="hidden" name="benefit" value="<?= $insurancePlan["benefit"] ?>"/>
                                     </div>
                                     <div class="form-common">
                                         <span class="form-label">Per Month <span class="float-r">:</span></span>
                                         <h4>Rs. <?= $insurancePlan["per_month"] ?></h4>
-                                        <input type="hidden" name="title" value="<?= $insurancePlan["per_month"] ?>" disabled/>
+                                        <input type="hidden" name="per_month" value="<?= $insurancePlan["per_month"] ?>"/>
                                     </div>
                                     <div class="form-common">
                                         <span class="form-label">Term <span class="float-r">:</span></span>
-                                        <h4>Rs. <?= $insurancePlan["term"] ?></h4>
-                                        <input type="hidden" name="title" value="<?= $insurancePlan["term"] ?>" disabled/>
+                                        <h4><?= $insurancePlan["term"] ?></h4>
+                                        <input type="hidden" name="term" value="<?= $insurancePlan["term"] ?>"/>
                                     </div>
                                 </div>
                                 <span class="updated-on-txt float-r">Last Updated On:&nbsp; <?= date("Y-m-d",strtotime($insurancePlan["updated_at"])) ?></span>
                                 <div class="form-btn">
+                                    <input type="hidden" name="id" value="<?= $insurancePlan["id"] ?>"/>
                                     <button type="submit" value="Submit" name="selectNow"  id="selectNow" class="btn primary-btn">Select Now</button>
                                 </div>
                             </form>

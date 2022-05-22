@@ -1,5 +1,6 @@
 import * as navigation from './navigation.js';
 import * as common from './common.js';
+import * as clientPolicy from './client-policy.js';
 
 (function (doc) {
     'use strict';
@@ -10,8 +11,9 @@ import * as common from './common.js';
         navigation.menuBarsToggler();
         navigation.toggleSearchInput();
         navigation.scrollToTop();
-        common.setRandomImgToPolicyForm();
         common.closeNotificationCard();
+        clientPolicy.setRandomImgToPolicyForm();
+        clientPolicy.clientFormRequiredCheck();
     });
 
     window.addEventListener('resize', () => {

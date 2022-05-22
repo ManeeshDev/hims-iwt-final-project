@@ -82,7 +82,7 @@ function show_message()
     if (isset($_SESSION['ERRORS'])) :
         foreach ($_SESSION['ERRORS'] as $error) : ?>
             <div class="alert alert-<?= $error["status"]; ?>">
-                <?= ucfirst($error["message"]); ?>!.
+                <?= ucfirst($error["message"]); ?>.!
             </div>
 <?php endforeach;
         unset($_SESSION['ERRORS']);

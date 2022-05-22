@@ -1,13 +1,18 @@
 <?php
     include_once(dirname(__FILE__) .  '/includes/config.php');
-    // include_once(dirname(__FILE__) .  '/includes/authenticate.php');
+    include_once(dirname(__FILE__) .  '/includes/authenticate.php');
     include_once(dirname(__FILE__) .  '/php/functions/validator.php');
+    include_once(dirname(__FILE__) .  '/php/functions/main.php');
     include_once(dirname(__FILE__) .  '/php/functions/policy.php');
 
-    $email = isset($_SESSION["email"]) ? $_SESSION["email"] : '';
-    $name = isset($_SESSION["name"]) ? $_SESSION["name"] : '';
-    $nic = isset($_SESSION["nic"]) ? $_SESSION["nic"] : '';
-    $phone = isset($_SESSION["phone"]) ? $_SESSION["phone"] : '';
+    $ownUser = getOwnUser();
+    $email = $ownUser && !empty($ownUser) ? $ownUser["email"] : '';
+    $name = $ownUser && !empty($ownUser) ? $ownUser["name"] : '';
+    $nic = $ownUser && !empty($ownUser) ? $ownUser["nic"] : '';
+    $phone = $ownUser && !empty($ownUser) ? $ownUser["phone_number"] : '';
+
+    $policyId = isset($_GET['pId']) ? $_GET['pId'] : '';
+    $policyTerm = isset($_GET['pTerm']) ? $_GET['pTerm'] : '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +30,7 @@
     <link href="./css/app.css" rel="stylesheet" />
 </head>
 
-<body class="mobile-view loading">
+<body class="mobile-view loading body-bg-l-ocean">
 
     <!-- =========== PAGE PRE-LOADER =============================== -->
     <div class="pre-loader" id="preLoader">
@@ -77,20 +82,20 @@
                         <div class="client-form-right">
                             <form action="/php/actions/client.php" method="POST" id="clientForm">
                                 <div class="mb-30">
-                                    <h2>Hello Maneesh!</h2>
+                                    <h2>Hello <?= $name ?>!</h2>
                                 </div>
                                 <div class="client-form-common">
                                     <div class="form-common">
                                         <span class="form-label">Email <span class="float-r">:</span></span>
-                                        <h4>example@gmail.com</h4>
+                                        <h4><?= $email ?></h4>
                                     </div>
                                     <div class="form-common">
                                         <span class="form-label">Nic <span class="float-r">:</span></span>
-                                        <h4>981443225V</h4>
+                                        <h4><?= $nic ?></h4>
                                     </div>
                                     <div class="form-common">
                                         <span class="form-label">Phone <span class="float-r">:</span></span>
-                                        <h4>+94 766171525</h4>
+                                        <h4><?= $phone ?></h4>
                                     </div>
                                     <hr>
                                     <div class="form-common">
@@ -121,22 +126,24 @@
                                     </div>
                                     <div class="form-common">
                                         <span class="form-label pl-15">State <span class="float-r">:</span></span>
-                                        <input class="form-control" type="text" name="state" placeholder="Enter your state">
+                                        <input class="form-control" type="text" name="state" placeholder="Enter your state" required>
                                     </div>
                                     <div class="form-common">
                                         <span class="form-label pl-15">City <span class="float-r">:</span></span>
-                                        <input class="form-control" type="text" name="city" placeholder="Enter your city">
+                                        <input class="form-control" type="text" name="city" placeholder="Enter your city" required>
                                     </div>
                                     <div class="form-common">
                                         <span class="form-label pl-15">Street <span class="float-r">:</span></span>
-                                        <input class="form-control" type="text" name="street" placeholder="Enter your street">
+                                        <input class="form-control" type="text" name="street" placeholder="Enter your street" required>
                                     </div>
                                     <div class="form-common">
                                         <span class="form-label pl-15">Postal Code <span class="float-r">:</span></span>
-                                        <input class="form-control" type="text" name="postal-code" placeholder="Enter your postal code">
+                                        <input class="form-control" type="text" name="postal-code" placeholder="Enter your postal code" required>
                                     </div>
                                 </div>
                                 <div class="form-btn">
+                                    <input type="hidden" name="policy-id" value="<?= $policyId ?>"/>
+                                    <input type="hidden" name="policy-term" value="<?= $policyTerm ?>"/>
                                     <button type="submit" value="Submit" name="submitProfile"  id="submitProfile" class="btn primary-btn">
                                         Submit Profile
                                     </button>

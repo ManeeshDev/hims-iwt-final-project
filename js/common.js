@@ -7,22 +7,16 @@ export const hidePreLoader = (time = 500) => {
     }, time);
 }
 
-export const setRandomImgToPolicyForm = () => {
-    if ((document.URL).includes('policy.php')) {
-        const rndNo = Math.floor(Math.random() * 4) + 1;
-        document.querySelector('.buy-policy-form>.policy-form-l-bg').style.backgroundImage = "url(../images/policy-form-img-" + rndNo + ".svg)";
-    }
-    return false;
-}
-
 export const closeNotificationCard = () => {
     let notificationCloseBtn = document.querySelector("#notificationCloseBtn");
     let notificationCard = document.querySelector("#notificationCard");
-    notificationCloseBtn.addEventListener("click", (event) => {
-        notificationCard.classList.remove('slide-in');
-        notificationCard.classList.add('slide-out');
-        setTimeout(() => {
-            notificationCard.remove();
-        }, 1500);
-    });
+    if (notificationCloseBtn && notificationCard) {
+        notificationCloseBtn.addEventListener("click", (event) => {
+            notificationCard.classList.remove('slide-in');
+            notificationCard.classList.add('slide-out');
+            setTimeout(() => notificationCard.remove(), 1500);
+        });
+        setTimeout(() => notificationCard.classList.add('slide-out'), 11000);
+        setTimeout(() => notificationCard.remove(), 14000);
+    }
 }

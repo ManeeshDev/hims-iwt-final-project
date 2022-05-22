@@ -50,10 +50,6 @@ body {
    color: #212529;
 }
 
-main {
-   background-color: var(--light-ocean);
-}
-
 ::-webkit-scrollbar {
    width: 8px;
    height: 8px;
@@ -130,6 +126,10 @@ h6,
    font-weight: bold;
    line-height: 1.2;
    color: var(--dark);
+}
+
+.body-bg-l-ocean {
+   background-color: var(--light-ocean) !important;
 }
 
 .loading {

@@ -5,7 +5,7 @@ include_once(dirname(__FILE__) .  '/../functions/helper.php');
 include_once(dirname(__FILE__) .  '/../functions/validator.php');
 
 
-function createBuyPolicy($client)
+function createBuyPolicy($client, $policyID, $policyTerm)
 {
     $conn = connect();
 
@@ -14,19 +14,19 @@ function createBuyPolicy($client)
     }
 
     $clientId = $client["id"];
-    $policyId = $_POST['id'];
+    $policyId = $policyID;
+    $term = $policyTerm;
 
     $startDate = date("Y-m-d");
-    $endDate = date('Y-m-d', strtotime('+' . $_POST['term']));
+    $endDate = date('Y-m-d', strtotime('+' . $term));
 
     $createQuery = "INSERT INTO `buy_policy` (`client_id`, `policy_id`, `start_date`, `end_date`) VALUES ('$clientId', '$policyId', '$startDate', '$endDate')";
     $result = readQuery($conn, $createQuery);
 
     if ($result) {
         $last_id = $conn->insert_id;
-        addError("Your Insurance Plan successfully created.", 'success');
-        header('Location: ' . BASE_URL . '/index.php');
-        exit();
+        $buyPolicy = ['result' => $result, 'message' => 'Your Insurance Plan successfully created', 'status' => 'success'];
+        return $buyPolicy;
     } else {
         addError(mysqli_error($conn), 'danger');
     }
@@ -65,7 +65,26 @@ function getPolicyById($pId = 1)
     }
     $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-    // dd($result[0]);
+    mysqli_close($conn);
+    return $result[0];
+}
+
+function getBuyPolicyByKey($clientId, $policyId)
+{
+
+    $conn = connect();
+
+    $clientId = $conn->real_escape_string(htmlspecialchars($clientId));
+    $policyId = $conn->real_escape_string(htmlspecialchars($policyId));
+
+    $query = "SELECT * FROM `buy_policy` WHERE `client_id` = '$clientId' AND `policy_id` ='" . $policyId . "'";
+
+    $result = readQuery($conn, $query);
+
+    if (mysqli_num_rows($result) == 0) {
+        return false;
+    }
+    $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     mysqli_close($conn);
     return $result[0];
