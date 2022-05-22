@@ -22,7 +22,7 @@ if (isset($_POST['action']) && $_POST['action'] === "login") {
     $result = readQuery($conn, $query);
     $num_rows = $result->num_rows;
     if ($num_rows === 1) {
-        $result =  mysqli_fetch_array($result); 
+        $result =  mysqli_fetch_array($result);
         if (password_verify($password, $result['password'])) {
             $_SESSION["id"] = $result['id'];
             $_SESSION["name"] = $result['name'];
@@ -31,7 +31,17 @@ if (isset($_POST['action']) && $_POST['action'] === "login") {
             $_SESSION['login'] = TRUE;
 
             addError("You have successfully login!", 'success');
-            header('Location: ../../admin/');
+            switch ($result['user_type']) {
+                case 'user':
+                    header('Location:' . BASE_URL . '/profile.php');
+                    break;
+                case 'agent':
+                case 'admin':
+                case 'client':
+                default:
+                    header('Location:' . BASE_URL . '/profile.php');
+                    break;
+            }
             exit();
         } else {
             addError("Wrong password. Try again or click Forgot password to reset it.", 'danger');

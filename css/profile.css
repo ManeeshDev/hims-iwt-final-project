@@ -1,4 +1,3 @@
- 
 .form-control:focus {
    box-shadow: none;
    outline: none;
@@ -68,4 +67,7 @@ label {
 .profile #add-new-phone:hover {
    background: #632778;
    color: #fff;
+}
+.profile .alert {
+   width: 100%;
 }

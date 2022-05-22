@@ -340,7 +340,9 @@
 .pl-15 {
    padding-left: 15px !important;
 }
-
+.w-100 {
+   width: 100%;
+}
 /* ==== Text classes === */
 .text-center {
    text-align: center !important;
@@ -393,6 +395,9 @@
 }
 .d-flex {
    display: flex !important;
+}
+.d-block {
+   display: block !important;
 }
 .text-center {
    text-align: center !important;

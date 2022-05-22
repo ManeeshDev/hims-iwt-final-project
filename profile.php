@@ -48,8 +48,8 @@ $contacts = getUserContacts($user_id);
                 </div>
                 <div class="col-5 border-right">
                     <div class="row px-3">
-                        <div class="mb-5x">
-                            <h4 class="text-right">Profile Settings</h4>
+                        <div class="d-block w-100 mb-5x">
+                            <h4>Profile Settings</h4>
                         </div>
                         <?php show_message(); ?>
                         <form action="<?= BASE_URL ?>/php/actions/profile.php" method="post" enctype="multipart/form-data">
@@ -94,7 +94,7 @@ $contacts = getUserContacts($user_id);
                 <div class="col-4">
                     <div class="row px-3">
                         <div class="mb-5x">
-                            <h4 class="text-right">Change Password</h4>
+                            <h4>Change Password</h4>
                         </div>
                         <form action="<?= BASE_URL ?>/php/actions/profile.php" method="post" enctype="multipart/form-data">
                             <div class="row mt-2">
