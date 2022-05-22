@@ -26,11 +26,15 @@
     padding: 25px;
     border-radius: 4px;
     max-width: 460px;
-    max-height: 120px;
     position: relative;
 }
 
-.notification .nt-text-content .alert-success {
+.notification .nt-text-content .alert:first-child {
+    margin: 0;
+}
+
+.notification .nt-text-content .alert {
+    margin-top: 0.25rem;
     margin-bottom: 0;
 }
 
@@ -43,6 +47,7 @@
     line-height: 1.4;
     font-size: 14px;
     overflow: auto;
+    max-height: 200px;
 }
 
 .notification .nt-close-btn {
