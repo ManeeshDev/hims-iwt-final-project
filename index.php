@@ -54,8 +54,10 @@ include_once(dirname(__FILE__) .  '/php/functions/validator.php');
                                 <p class="fadeInUp-3s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum.</p>
                                 <div class="fadeInUp-4s">
-                                    <button class="btn primary-btn mr-3">Get Started</button>
-                                    <button class="btn secondary-btn">Find An Agent</button>
+                                    <a href="./policy.php?pId=1" class="btn primary-btn mr-3">Get Started</a>
+                                    <form action="./php/actions/policy.php" method="POST" id="findAnAgentForm">
+                                        <button type="submit" value="Submit" name="findAnAgent"  id="findAnAgent"  class="btn secondary-btn">Find An Agent</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
