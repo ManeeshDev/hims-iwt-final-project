@@ -11,9 +11,9 @@ if (session_status() == PHP_SESSION_NONE) {
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+mysqli_report(MYSQLI_REPORT_OFF | MYSQLI_REPORT_STRICT);
 
-
-define('APP_NAME', 'HIMS'); 
+define('APP_NAME', 'HIMS');
 define('BASE_URL', getBaseUrl());
 define('APP_EMAIL', "help@hims.lk");
 define('APP_CONTACT_NO', "");
@@ -37,7 +37,7 @@ function connect()
 
 function readQuery(mysqli $conn, string $query)
 {
-    $result = mysqli_query($conn, $query) or die('Error: ' . mysqli_error($conn));
+    $result = mysqli_query($conn, $query) /* or die('Error: ' . mysqli_error($conn)) */; // uncomment to die query or comment this to get error from query to display purpose
     return $result;
 }
 

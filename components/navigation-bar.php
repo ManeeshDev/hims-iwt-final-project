@@ -1,6 +1,16 @@
 <?php
 include_once(dirname(__FILE__) .  '/../php/functions/policy.php');
+include_once(dirname(__FILE__) .  '/../php/functions/user.php');
 $policies = getAllPolicies();
+
+$user_id = @$_SESSION['id'];
+$user = [];
+$profile_photo = '#';
+if ($user_id) {
+    $user = getUser($user_id);
+    $profile_photo = !empty($user['profile_photo']) ? "uploads/profile/" . $user['profile_photo'] : "https://ui-avatars.com/api/?size=175&name=" . $user['name'];
+}
+
 ?>
 <nav class="navbar shadow">
     <!-- =========== Start Nav bar Area =============================== -->
@@ -68,11 +78,11 @@ $policies = getAllPolicies();
             <?php else : ?>
                 <li class="avatar-li">
                     <div class="avatar-img-div">
-                        <img src="./images/user-avatar.svg" class="avatar-img" alt="profile_img" />
+                        <img src="<?= $profile_photo ?>" class="avatar-img" alt="profile_img" width="35" height="35" />
                     </div>
                     <div class="avatar-menu">
                         <div class="avatar-menu-left">
-                            <img src="./images/user-avatar.svg" class="avatar-img-big" alt="profile_img" />
+                            <img src="<?= $profile_photo ?>" class="avatar-img-big" alt="profile_img" width="120" height="120" />
                             <form method="POST" action="<?= BASE_URL ?>/php/actions/logout.php">
                                 <input type="hidden" name="action" value="logout" />
                                 <button onclick="event.preventDefault(); this.closest('form').submit();" class="btn logout-btn">Logout</button>
@@ -80,10 +90,10 @@ $policies = getAllPolicies();
                         </div>
                         <div class="avatar-menu-right">
                             <ul>
+                                <li><a href="<?= BASE_URL ?>/profile.php">My Profile</a></li>
                                 <li><a href="#">Location</a></li>
                                 <li><a href="#">Favorites</a></li>
                                 <li><a href="#">Add people</a></li>
-                                <li><a href="#">Settings</a></li>
                                 <li><a href="#">Downloads</a></li>
                             </ul>
                         </div>

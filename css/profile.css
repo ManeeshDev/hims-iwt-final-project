@@ -1,5 +1,10 @@
+main,
+footer {
+   background-color: #fff !important;
+}
 .form-control:focus {
    box-shadow: none;
+   outline: none;
    border-color: #ba68c8;
 }
 .profile-button {
@@ -48,5 +53,22 @@ label {
    background-clip: padding-box;
    border: 1px solid #ced4da;
    border-radius: 0.25rem;
-   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.profile #user_contacts .remove {
+   cursor: pointer;
+   font-size: 14px;
+   color: red;
+   margin-right: 5px;
+   text-align: right;
+   float: right;
+}
+.profile #add-new-phone {
+   border-radius: 5px;
+   padding: 3px 10px !important;
+   transition: 0.2s all ease-in-out;
+}
+.profile #add-new-phone:hover {
+   background: #632778;
+   color: #fff;
 }

@@ -1,0 +1,7 @@
+
+RewriteEngine On
+
+
+
+# Disabling Directory Browse 
+Options -Indexes

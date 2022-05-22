@@ -17,6 +17,7 @@ include_once(dirname(__FILE__) .  '/php/functions/validator.php');
     <link href="./images/favicon.ico" rel="icon" />
     <!-- CALL APP STYLE SHEET -->
     <link href="./css/app.css" rel="stylesheet" />
+    <link href="./css/login.css" rel="stylesheet" />
 </head>
 
 <body class="mobile-view loading">
