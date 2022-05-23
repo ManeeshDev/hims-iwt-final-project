@@ -79,8 +79,35 @@ include_once(dirname(__FILE__) .  '/php/functions/validator.php');
         <!-- =========== END BANNER AREA =============================== -->
         <!--    TODO: Remove Temp added div   -->
         <section id="midArea">
-            <div class="container">
-                <div style="height:600px;color:black;text-align:center;padding:30px;margin-top:200px"></div>
+            <div class="container mid-content">
+                <div class="row">
+                    <div class="col-12 justify-center">
+                        <h2>Insurance Plans and Products</h2>
+                    </div>
+                    <div class="col-12">
+                        <div class="container">
+                            <div class="col-6">
+                                <h4>Buying your own coverage</h4>
+                                <div class="content">
+                                    <?php foreach ($policies as $policy) : ?>
+                                        <a href="<?= BASE_URL ?>/policy.php?pId=<?= $policy["id"] ?>"><h6><?= $policy["title"] ?></h6></a>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <h4>Insurance through employers</h4>
+                                <div class="content">
+                                    <h6>Employee Plans and Policies</h6>
+                                    <p>Learn about the Hims medical, pharmacy, dental, and voluntary benefits that your employer may offer.</p>
+                                </div>
+                                <div class="content">
+                                    <h6>Employer Group Solutions</h6>
+                                    <p>Ready to plan your benefits strategy for next year? Learn how our flexible options can help control your costs and keep your employees healthy.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

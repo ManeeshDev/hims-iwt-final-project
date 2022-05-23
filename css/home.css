@@ -66,3 +66,8 @@
     width: 85%;
     margin: 0 0 0 55px;
 }
+
+.mid-content {
+    margin: 140px auto;
+    background-color: #eafff6;
+}
