@@ -39,7 +39,7 @@
                         </div>
                         <div class="container-login-form-btn mt-20">
                             <input type="hidden" name="action" value="forgot">
-                            <button class="btn login-form-btn">Forgot</button>
+                            <button class="btn login-form-btn" type="submit">Forgot</button>
                         </div>
                         <div class="text-center pt-45 pb-4">
                             <span class="txt1"></span>
