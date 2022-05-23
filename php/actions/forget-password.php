@@ -44,7 +44,7 @@ if (isset($_POST['action']) && $_POST['action'] === "forgot") {
         exit();
     } else {
         addError("Email is not exists, please register or check your email address!", 'danger');
-        header('Location: ../forgot-password/?message=13');
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
         exit();
     }
 }
