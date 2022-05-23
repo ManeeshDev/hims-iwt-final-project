@@ -11,10 +11,10 @@
 | Registration Number | Name | Email | Contribution |
 | :---: | :---: | :---: | :---: |
 | IT21156038 | Nawanjala N.K.N. | it21156038@my.sliit.lk | Ticket (Enquiry) |
-| IT21156410 | Fonseka M.M.N.H | it21156410@my.sliit.lk | Login, Register, Profile Manage, Related designs & AdminPanel structure |
+| IT21156410 | Fonseka M.M.N.H | it21156410@my.sliit.lk | Login, Register, Profile Manage, Related designs & AdminPanel structure,Contact |
 | IT21157264 | Rupasiri M.C.I | it21157264@my.sliit.lk | Feedback |
 | IT21171888 | Dasanayaka D.M.U.H | it21171888@my.sliit.lk | Forum |
-| IT21169908 | Prashantha K.G.M  | it21169908@my.sliit.lk | Policy(Admin), Buy Policy, Client Create, Related designs & Header,Footer,Home |
+| IT21169908 | Prashantha K.G.M  | it21169908@my.sliit.lk | Policy(Admin), Buy Policy, Client Create, Related designs & Header,Footer,Home,About |
 
 ______________
 ::
