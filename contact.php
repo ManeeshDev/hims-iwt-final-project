@@ -39,7 +39,7 @@ include_once(dirname(__FILE__) .  '/includes/config.php');
                         <div class="mb-5x">
                             <h4>Get In Touch</h4>
                         </div>
-                        <form action="<?= BASE_URL ?>/php/actions/profile.php" method="post" enctype="multipart/form-data">
+                        <form method="post" enctype="multipart/form-data">
                             <div class="row mt-2">
                                 <div class="col-12 py-0">
                                     <label class="labels">Name</label>
@@ -62,9 +62,8 @@ include_once(dirname(__FILE__) .  '/includes/config.php');
                                     <textarea name="subject" placeholder="Subject" required class="form-control" style="height: 200px;" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
-                            <div class="mt-5 text-center">
-                                <input type="hidden" name="action" value="change-password">
-                                <button class="btn btn-primary profile-button" type="submit">Send</button>
+                            <div class="mt-5 text-center"> 
+                                <button class="btn btn-primary profile-button" >Send</button>
                             </div>
                         </form>
                     </div>
