@@ -61,6 +61,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = readQuery($conn, $createQuery);
 
         if ($result) {
+
+            $userTypeUpdated = updateUserType("client");
+
             $last_id = $conn->insert_id;
 
             if (!$findAnAgent) {

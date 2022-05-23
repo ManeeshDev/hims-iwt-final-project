@@ -96,6 +96,27 @@ function assignAgent()
     return $singleAgent;
 }
 
+function updateUserType($userType)
+{
+    $conn = connect();
+
+    if (!isset($_SESSION["id"])) {
+        forceLogoutWithMsg();
+    }
+
+    $userId = $_SESSION["id"];
+
+    $userType = $conn->real_escape_string($userType);
+
+    $query = "UPDATE  `users` SET  `user_type` = '$userType' WHERE `id` = '$userId'";
+    $result = readQuery($conn, $query);
+
+    if ($result) {
+        return true;
+    } 
+    return false;
+}
+
 function forceLogoutWithMsg()
 {
     logOut();

@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit();
             }
         } else {
-            header('Location: ' . BASE_URL . '/client.php?pId=' . $policyId . '&pTerm=' . $policyTerm . '');
+            header('Location: ' . BASE_URL . '/client.php?pId=' . $policyId . '&pTerm=' . $policyTerm . '&for=buyPolicy');
             exit();
         }
     }

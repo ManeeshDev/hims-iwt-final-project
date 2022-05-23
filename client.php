@@ -17,7 +17,7 @@
 
     $forWhat = isset($_GET['for']) ? $_GET['for'] : '';
 
-    if ($forWhat != 'findAnAgent') {
+    if ($forWhat != 'findAnAgent' && $forWhat != 'buyPolicy') {
         header('Location: ' . BASE_URL . '/index.php');
         exit();
     }
