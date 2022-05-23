@@ -1,0 +1,64 @@
+.about-section {
+    background: url("../images/about/about-side-bg.png") no-repeat left;
+    background-size: 55%;
+    background-color: #fdfdfd;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    top: -25px;
+}
+
+.inner-container {
+    width: 65%;
+    float: right;
+    background-color: #fdfdfd;
+    padding: 60px;
+    height: 1235px;
+    top: 65px;
+    position: relative;
+    -webkit-box-shadow: -10px -9px 5px 0px rgb(255 255 255 / 52%);
+    -moz-box-shadow: -10px -9px 5px 0px rgb(255 255 255 / 52%);
+    box-shadow: -10px -9px 5px 0px rgb(255 255 255 / 52%);
+}
+
+.inner-container h1 {
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.inner-container .text {
+    font-size: 13px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.inner-container .text span {
+    margin-left: 40px;
+}
+
+.we-are {
+    display: grid;
+    justify-content: space-evenly;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.we-are span {
+    margin: 10px 0;
+}
+
+.elements {
+    display: flex;
+    margin: 10px 0;
+}
+
+.elements .we-are-img {
+    width: 85px;
+}
+
+.elements .we-are-img img {
+    width: 70%;
+}
