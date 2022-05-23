@@ -1,14 +1,14 @@
-
 <?php
 // ============================================================
-//         Reusable data fetching functions add here 
+//         Reusable data fetching functions add here
 // ============================================================
 
 include_once(dirname(__FILE__) .  '/../../includes/config.php');
 include_once(dirname(__FILE__) .  '/../functions/helper.php');
 include_once(dirname(__FILE__) .  '/../functions/validator.php');
 
-function getOwnUser() {
+function getOwnUser()
+{
 
     $conn = connect();
 
@@ -34,7 +34,8 @@ function getOwnUser() {
     return $user;
 }
 
-function getOwnUserPhone() {
+function getOwnUserPhone()
+{
 
     $conn = connect();
 
@@ -56,7 +57,8 @@ function getOwnUserPhone() {
     return $result[0];
 }
 
-function getClientByUserId($userID) {
+function getClientByUserId($userID)
+{
 
     $conn = connect();
     $userId = $conn->real_escape_string(htmlspecialchars($userID));
@@ -73,7 +75,8 @@ function getClientByUserId($userID) {
     return $result[0];
 }
 
-function assignAgent() {
+function assignAgent()
+{
 
     $conn = connect();
 
@@ -93,7 +96,8 @@ function assignAgent() {
     return $singleAgent;
 }
 
-function forceLogoutWithMsg() {
+function forceLogoutWithMsg()
+{
     logOut();
     addError("Please login first!", 'danger');
     header('Location: ' . BASE_URL . '/login.php');

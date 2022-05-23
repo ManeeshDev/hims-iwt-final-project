@@ -10,28 +10,28 @@ export const setRandomImgToPolicyForm = () => {
 export const clientFormRequiredCheck = () => {
     [...document.querySelectorAll("#clientForm [required]")].forEach(elem => {
         document.querySelector("#submitProfile").addEventListener("click", (event) => {
-            if (!elem.value || elem.value == " " || elem.value == undefined) {
+            if (!elem.value || elem.value === " " || elem.value === undefined) {
                 elem.style.border = "1px solid red";
             } else {
                 elem.style.border = "1px solid var(--primary)";
             }
         });
         elem.addEventListener("input", () => {
-            if (!elem.value || elem.value == " " || elem.value == undefined) {
+            if (!elem.value || elem.value === " " || elem.value === undefined) {
                 elem.style.border = "1px solid red";
             } else {
                 elem.style.border = "1px solid var(--primary)";
             }
         });
         elem.addEventListener("change", () => {
-            if (!elem.value || elem.value == " " || elem.value == undefined) {
+            if (!elem.value || elem.value === " " || elem.value === undefined) {
                 elem.style.border = "1px solid red";
             } else {
                 elem.style.border = "1px solid var(--primary)";
             }
         });
         elem.addEventListener("blur", () => {
-            if (!elem.value || elem.value == " " || elem.value == undefined) {
+            if (!elem.value || elem.value === " " || elem.value === undefined) {
                 elem.style.border = "1px solid red";
             } else {
                 elem.style.border = "1px solid var(--primary)";

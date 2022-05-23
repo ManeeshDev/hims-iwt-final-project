@@ -33,15 +33,15 @@
     width: 100%;
     margin: auto;
     background: #fff;
-    -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.3);
 }
 
 .buy-policy-form>.policy-form-l-bg {
     position: absolute;
-    left: 0px;
-    top: 0px;
-    bottom: 0px;
+    left: 0;
+    top: 0;
+    bottom: 0;
     width: 300px;
     height: auto;
     background-image: url('../images/policy-form-img-1.svg');
@@ -53,15 +53,14 @@
     position: relative;
     max-width: 900px;
     width: 100%;
-    margin: auto;
-    margin-right: 0;
+    margin: auto 0 auto auto;
 }
 
 .buy-policy-form-right>form {
     margin-left: 180px;
     padding: 30px;
     border: 1px solid #f9fafc;
-    border-left: 0px;
+    border-left: 0;
 }
 
 .buy-policy-form-right>form h2 {

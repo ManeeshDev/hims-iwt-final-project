@@ -66,9 +66,10 @@ body {
    width: 260px;
    border: none;
    background-color: #bf003f;
+   height: 135vh;
 }
 .navbar-default {
-   border: 0px solid black;
+   border: 0 solid black;
 }
 
 .sidebar-collapse .nav {

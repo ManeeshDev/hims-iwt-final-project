@@ -1,7 +1,7 @@
 <?php
 require_once(dirname(__FILE__) .  '/includes/config.php');
 include_once(dirname(__FILE__) .  '/php/functions/validator.php');
-// var_dump(password_verify(123456, '$2y$10$oFkLu6g2swa4CS/2ix3gOu2VAwApHCpAPEadeBD9PszFUFNKJrgBu'));exit;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +37,7 @@ include_once(dirname(__FILE__) .  '/php/functions/validator.php');
                         <span class="login-form-title pb-33">
                             Account Login
                         </span>
-                        <?php show_message(); ?> 
+                        <?php show_message(); ?>
                         <div class="col-12 p-0">
                             <label class="labels">Email</label>
                             <input class="form-control" type="email" name="email" placeholder="Email">

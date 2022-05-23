@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             addError("Policies not found by given id!:", 'danger');
             header('Location: ' . $_SERVER['HTTP_REFERER']);
             exit();
-        } 
+        }
 
         if (!isset($insurancePlan)) {
             addError("Something went wrong!:" . mysqli_error($conn), 'danger');
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (isset($_POST['addPolicy'])) {
-        
+
         $conn = connect();
 
         check($_POST, [
@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $createQuery = "INSERT INTO `policy`(`title`, `coverage`, `age_min`, `age_max`, `benefit`, `per_month`, `term`) VALUES ('$title', '$coverage', '$age_min', '$age_max', '$benefit', '$per_month', '$term')";
         $result = readQuery($conn, $createQuery);
-        
+
         if ($result) {
             $last_id = $conn->insert_id;
             addError("New Policy successfully created", 'success');
@@ -153,7 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['deletePolicy'])) {
 
         $conn = connect();
-        
+
         if (!$_POST['id'] || !isset($_POST['id'])) {
             addError("Get policy first", 'danger');
             header('Location: ' . $_SERVER['HTTP_REFERER']);
@@ -180,4 +180,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 addError("403: Access denied!", 'danger');
 header('Location: ' . $_SERVER['HTTP_REFERER']);
-exit(); 
+exit();

@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $createQuery = "INSERT INTO `client` (`user_id`, `agent_id`, `state`, `city`, `street`, `postal_code`, `dob`, `marital_state`, `gender`) VALUES ('$userId', '$agentId', '$state', '$city', '$street', '$postalCode', '$dob', '$maritalState', '$gender')";
         $result = readQuery($conn, $createQuery);
-        
+
         if ($result) {
             $last_id = $conn->insert_id;
 
@@ -85,4 +85,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 addError("403: Access denied!", 'danger');
 header('Location: ' . $_SERVER['HTTP_REFERER']);
-exit(); 
+exit();

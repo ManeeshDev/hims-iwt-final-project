@@ -58,7 +58,7 @@ button:hover {
    cursor: pointer;
 }
 .footer-section {
-   margin-top: 0px !important;
+   margin-top: 0 !important;
 }
 .txt1 {
    font-size: 15px;
@@ -114,7 +114,7 @@ button:hover {
 .wrap-input.rs1 {
    border-top: none;
 }
- 
+
 .container-login-form-btn {
    width: 100%;
    display: flex;

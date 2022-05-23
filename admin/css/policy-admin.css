@@ -27,11 +27,11 @@
     position: relative;
     max-width: 925px;
     width: 100%;
-    margin: auto;
     background: rgb(213, 252, 255);
-    -webkit-box-shadow: 0px 5px 10px -5px rgb(0 0 0 / 30%);
-    box-shadow: 0px 5px 10px -5px rgb(0 0 0 / 30%);
-    margin-left: 325px;
+    -webkit-box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
+    box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
+    margin: auto auto auto 254px;
+    border-radius: 6px;
 }
 
 /* .buy-policy-form>.policy-form-l-bg {
@@ -50,14 +50,13 @@
     position: relative;
     max-width: 900px;
     width: 100%;
-    margin: auto;
-    margin-right: 0;
+    margin: auto 0 auto auto;
 }
 
 .buy-policy-form-right>form {
     padding: 30px;
     border: 1px solid #f9fafc;
-    border-left: 0px;
+    border-left: 0;
 }
 
 .buy-policy-form-right>form h2 {
@@ -108,17 +107,18 @@
 .buy-policy-form-right .updated-on-txt {
     color: var(--mid-gray);
     font-size: 10px;
+    margin: 10px 10px 0 0 !important;
 }
 
 .form-control {
     background-color: #f7f9fa;
     height: 36px;
-    padding: 0px 10px;
+    padding: 0 10px;
     border-radius: 4px;
     -webkit-transition: 0.2s;
     transition: 0.2s;
     color: #122244;
-    border: 0px;
+    border: 0;
     font-size: 16px;
     -webkit-box-shadow: inset 0 1px 4px rgb(67 78 88 / 30%);
     box-shadow: inset 0 1px 4px rgb(67 78 88 / 30%);
@@ -144,7 +144,7 @@
 }
 
 .err-box {
-    height: 100px;
+    height: 90px;
     z-index: 10 !important;
     position: relative;
     overflow: auto;
@@ -157,6 +157,7 @@
     display: flex;
     justify-content: end;
 }
+
 .form-btn button {
     margin: 0 10px;
     width: 200px !important;

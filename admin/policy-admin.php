@@ -8,21 +8,21 @@ include_once(dirname(__FILE__) .  '/../php/functions/policy.php');
 include_once(dirname(__FILE__) .  '/../php/functions/validator.php');
 
 
-    $id = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["id"] ? $_SESSION['insurancePlan']["id"] : "";
-    $title = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["title"] ? $_SESSION['insurancePlan']["title"] : "";
-    $coverage = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["coverage"] ? $_SESSION['insurancePlan']["coverage"] : "";
-    $age_min = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["age_min"] ? $_SESSION['insurancePlan']["age_min"] : "";
-    $age_max = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["age_max"] ? $_SESSION['insurancePlan']["age_max"] : "";
-    $benefit = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["benefit"] ? $_SESSION['insurancePlan']["benefit"] : "";
-    $per_month = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["per_month"] ? $_SESSION['insurancePlan']["per_month"] : "";
-    $term = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["term"] ? $_SESSION['insurancePlan']["term"] : "";
-    $updated_at = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["updated_at"] ? $_SESSION['insurancePlan']["updated_at"] : "";
-    $canUpdate = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["can_update"] ? $_SESSION['insurancePlan']["can_update"] : false;
+$id = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["id"] ? $_SESSION['insurancePlan']["id"] : "";
+$title = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["title"] ? $_SESSION['insurancePlan']["title"] : "";
+$coverage = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["coverage"] ? $_SESSION['insurancePlan']["coverage"] : "";
+$age_min = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["age_min"] ? $_SESSION['insurancePlan']["age_min"] : "";
+$age_max = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["age_max"] ? $_SESSION['insurancePlan']["age_max"] : "";
+$benefit = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["benefit"] ? $_SESSION['insurancePlan']["benefit"] : "";
+$per_month = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["per_month"] ? $_SESSION['insurancePlan']["per_month"] : "";
+$term = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["term"] ? $_SESSION['insurancePlan']["term"] : "";
+$updated_at = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["updated_at"] ? $_SESSION['insurancePlan']["updated_at"] : "";
+$canUpdate = isset( $_SESSION['insurancePlan']) && $_SESSION['insurancePlan']["can_update"] ? $_SESSION['insurancePlan']["can_update"] : false;
 
-    if (!isset($_SESSION)) {
-        session_start();
-    }
-    unset($_SESSION["insurancePlan"]);
+if (!isset($_SESSION)) {
+    session_start();
+}
+unset($_SESSION["insurancePlan"]);
 
 ?>
 <!DOCTYPE html>
@@ -49,19 +49,19 @@ include_once(dirname(__FILE__) .  '/../php/functions/validator.php');
             </div>
             <div class="col-6">
                 <?php if (isset($_SESSION['ERRORS'])) : ?>
-                    <div class="err-box"><?php show_message(); ?></div> 
+                    <div class="err-box"><?php show_message(); ?></div>
                 <?php endif; ?>
             </div>
         </div>
     </div>
     <!-- =========== POLICY FORM =============================== -->
     <section id="policyFormSec">
-        <div class="container my-5">
+        <div class="container mb-5">
             <div class="row">
                 <div class="buy-policy-form">
                     <div class="buy-policy-form-right">
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-12 pt-5">
                                 <form action="./../php/actions/policy.php" method="POST" id="buyPolicyForm">
                                     <div class="form-common">
                                         <span class="form-label">Enter id <span class="float-r">:</span></span>
@@ -107,7 +107,6 @@ include_once(dirname(__FILE__) .  '/../php/functions/validator.php');
                                     <input class="form-control" type="text" name="term" value="<?= $term ?>"/>
                                 </div>
                             </div>
-                            <span class="updated-on-txt float-r">Last Updated On:&nbsp; <?= date("Y-m-d",strtotime($updated_at)) ?></span>
                             <div class="form-btn">
                                 <input type="hidden" name="id" value="<?= $id ?>"/>
                                 <?php if ($canUpdate) : ?>
@@ -117,6 +116,7 @@ include_once(dirname(__FILE__) .  '/../php/functions/validator.php');
                                     <button type="submit" value="Submit" name="addPolicy"  id="addPolicy" class="btn primary-btn">Add Policy</button>
                                 <?php endif; ?>
                             </div>
+                            <span class="updated-on-txt">Last Updated On:&nbsp; <?= $updated_at ? date("Y-m-d",strtotime($updated_at)) : "0000-00-00" ?></span>
                         </form>
                     </div>
                 </div>

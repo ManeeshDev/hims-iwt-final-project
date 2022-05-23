@@ -9,13 +9,13 @@
     background: linear-gradient(135deg,#71b7e6,#9b59b6);
     
 }
-.enquiry-form h1,{
+.enquiry-form h1 {
 	font-size:30px;
 	text-align: center;
 	text-transform:uppercase;
 	margin: 40px 0;
-    
 }
+
 .enquiry-form p {
 	font-size: 20px;
 	margin: 15px 0;
@@ -63,7 +63,7 @@
 
 
 .enquires td, #enquires th {
-	border: 1px black);
+	border: 1px black;
 	padding: 8px;
   }
   
@@ -76,6 +76,5 @@
 	padding-bottom: 12px;
 	text-align: left;
 	background-color: #868696;
-	color: white);
+	color: white;
   }
-  .enquires button

@@ -13,6 +13,7 @@ $user_type = NULL;
 if (isset($_SESSION["id"])) {
     $user_id = $_SESSION["id"];
 }
+
 if (isset($_SESSION["user_type"])) {
     $user_type = $_SESSION["user_type"];
 }
@@ -23,6 +24,7 @@ if (empty($user_id) || empty($user_type)) {
     header('Location: ' . BASE_URL . '/login.php');
     exit();
 }
+
 if (isset($authorized_roles)) {
     if (!in_array($user_type, $authorized_roles)) {
         addError("403: Unauthorized", 'danger');

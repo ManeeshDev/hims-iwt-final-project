@@ -26,7 +26,7 @@
    text-transform: uppercase;
 }
 /*==============================================
-    CHAT WINDOW  STYLES    
+    CHAT WINDOW  STYLES
     =============================================*/
 
 .chat-widget-main {
@@ -37,11 +37,10 @@
 .chat-widget-left:after {
    top: 100%;
    left: 10%;
-   border: solid transparent;
    content: " ";
    position: absolute;
+   border: 15px solid transparent;
    border-top-color: #6792d5;
-   border-width: 15px;
    margin-left: -15px;
 }
 
@@ -59,11 +58,10 @@
 .chat-widget-right:after {
    top: 100%;
    right: 10%;
-   border: solid transparent;
    content: " ";
    position: absolute;
+   border: 15px solid transparent;
    border-top-color: #d51111;
-   border-width: 15px;
    margin-left: -15px;
 }
 
@@ -194,7 +192,7 @@
    GALLERY/ PORTFOLIO FILTER STYLES
     =====================================================*/
 ul#filters {
-   padding: 0px;
+   padding: 0;
 }
 #filters {
    margin: 3% 0;

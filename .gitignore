@@ -7,7 +7,6 @@ gen
 .idea/.gitignore
 .idea/misc.xml
 .idea/modules.xml
-.idea/movie-management-system.iml
 .idea/vcs.xml
 
 # IDE - VSCode
@@ -18,4 +17,4 @@ gen
 !.vscode/extensions.json
 .history/*
 
-uploads
+/uploads
